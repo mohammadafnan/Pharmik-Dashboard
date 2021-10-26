@@ -61,3 +61,8 @@
 
 /* === Layout === */
 @import "./assets/scss/layout";
+
+@media (min-width: 992px){
+    .modal-lg, .modal-xl {
+        max-width: 70% !important;
+    }}

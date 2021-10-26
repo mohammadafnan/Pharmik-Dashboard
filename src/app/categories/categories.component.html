@@ -1,0 +1,195 @@
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div>
+            <div class="card-body cardheader">
+
+                <div class="text-right">
+                    <button type="button" class="btn btn-primary btn-sm btn-rounded"
+                        (click)="openModal(exampleModalContent)">
+                        <i class="mdi mdi-plus mr-1"></i>Add category</button>
+                </div>
+                <ng-template class="modal fade" #exampleModalContent let-modal>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title" id="exampleModalLabel">Add Category</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                (click)="modal.dismiss()">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- <p>Modal body text goes here </p> -->
+                            <form class="pt-3">
+                                <div class="row ">
+                                    <div class="form-group col-lg-6">
+                                        <input type="text" class="form-control " placeholder="Category name">
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <input type="name" class="form-control " placeholder="Choose file">
+                                    </div>
+                                    <div class="form-group col-lg-6 mt-3">
+                                        <input type="text" class="form-control " placeholder="Blog URL">
+                                    </div>
+                                    <div class="form-group col-lg-6 mt-3">
+                                        <div class="row">
+                                            <div class="form-group col-lg-6">
+                                                <!-- Default switch -->
+                                                <div class="custom-control custom-switch mt-2">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                        id="customSwitches">
+                                                    <label class="custom-control-label" for="customSwitches">Show in
+                                                        main menu</label>
+                                                </div>
+                                                <!-- <input type="text" class="form-control " placeholder="Blog URL"> -->
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <!-- Default switch -->
+                                                <div class="custom-control custom-switch mt-2">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                        id="customSwitches">
+                                                    <label class="custom-control-label" for="customSwitches">Show in
+                                                        sidebar</label>
+                                                </div>
+                                                <!-- <input type="text" class="form-control " placeholder="Blog URL"> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        <input type="name" class="form-control " placeholder="Page Title">
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        <input type="text" class="form-control " placeholder="Page Description">
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        <input type="text" class="form-control " placeholder="Page Keyword">
+                                    </div>
+
+                                </div>
+<!-- 
+                                <div class="NgxEditor__Wrapper form-group mt-3">
+                                    <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+                                    <ngx-editor [editor]="editor" [ngModel]="html" [disabled]="false"
+                                        [placeholder]="'Type here...'"></ngx-editor>
+                                </div> -->
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success btn-rounded"
+                                (click)="modal.close()">Save</button>
+                            <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal"
+                                (click)="modal.close()">Cancel</button>
+                        </div>
+                    </div>
+                </ng-template>
+                <!-- Modal Ends -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Categories</h4>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Category image
+                                </th>
+                                <th>
+                                    Category
+                                </th>
+                                <th>
+                                    Include in header
+                                </th>
+                                <th>
+                                    Include in sidebar
+                                </th>
+                                <th>
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
+                                </td>
+                                <td>
+                                    antiboitic </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill ">yes</label>
+                                </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill">yes</label>
+                                </td>
+                                <td>
+                                    <i class=" mdi mdi-pencil " style="color: blueviolet;font-size: 16px;"></i>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
+                                </td>
+                                <td>
+                                    boitic </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill">yes</label>
+                                </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill">yes</label>
+                                </td>
+                                <td>
+                                    <i class=" mdi mdi-pencil " style="color: blueviolet;font-size: 16px;"></i>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
+                                </td>
+                                <td>
+                                    anxiety meds </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill">yes</label>
+                                </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill">yes</label>
+                                </td>
+                                <td>
+                                    <i class=" mdi mdi-pencil " style="color: blueviolet;font-size: 16px;"></i>
+
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                                <td>
+                                    <img src="assets/images/faces/face4.jpg" class="mr-2" alt="image">
+                                    John Doe
+                                </td>
+                                <td>
+                                    Loosing control on server
+                                </td>
+                                <td>
+                                    <label class="badge badge-gradient-danger">REJECTED</label>
+                                </td>
+                                <td>
+                                    Dec 3, 2017
+                                </td>
+                                <td>
+                                    WD-12348
+                                </td>
+                            </tr> -->
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
