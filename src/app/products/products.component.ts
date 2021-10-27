@@ -3,11 +3,11 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Editor } from 'ngx-editor';
 
 @Component({
-  selector: 'app-categories',
-  templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.scss']
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.scss']
 })
-export class CategoriesComponent implements OnInit {
+export class ProductsComponent implements OnInit {
   editor: Editor;
 
   constructor(private modalService: NgbModal) { }
@@ -41,4 +41,5 @@ export class CategoriesComponent implements OnInit {
   public delete(){
     this.url = '';
   }
+
 }

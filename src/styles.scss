@@ -51,8 +51,8 @@
 @import "./assets/scss/components/bootstrap-progress";
 @import "./assets/scss/components/bootstrap-alerts";
 @import "./assets/scss/components/tabs";
-@import "./assets/scss/components/dropdowns"; 
-@import "./assets/scss/components/date-picker"; 
+@import "./assets/scss/components/dropdowns";
+@import "./assets/scss/components/date-picker";
 @import "./assets/scss/components/pagination";
 @import "./assets/scss/components/portfolio";
 @import "./assets/scss/components/todo-list";
@@ -62,60 +62,87 @@
 /* === Layout === */
 @import "./assets/scss/layout";
 
-@media (min-width: 992px){
-    .modal-lg, .modal-xl {
+@media (min-width: 992px) {
+
+    .modal-lg,
+    .modal-xl {
         max-width: 60% !important;
-    }}
-
-    .ProseMirror.NgxEditor__Content {
-        padding: 10px !important;
-        height: 200px !important;
     }
+}
 
-    .NgxEditor__Wrapper {
-        border: 2px solid #ffffff !important;
-        border-radius: 20px !important;
- 
-    }
-    .NgxEditor:focus {
-        border: 2px solid #3a9dee !important;
-        border-radius: 20px !important;
- 
-    }
-    .NgxEditor__Wrapper .NgxEditor__MenuBar {
-        border-top-left-radius: 20px !important;
-        border-top-right-radius: 20px !important;
-        // border-bottom: 1px solid #3a9dee !important;
-    }
-    .NgxEditor {
- 
-    border-bottom-left-radius: 20px !important;
-        border-bottom-right-radius: 20px !important;  
-      }
-    //   .NgxEditor__Wrapper{
-    //     border-radius: 40px !important;
-    // }
+.ProseMirror.NgxEditor__Content {
+    padding: 10px !important;
+    height : 200px !important;
+}
 
-    ::placeholder { /* Most modern browsers support this now. */
-        color:    #3a9dee !important;
-     }
+.NgxEditor__Wrapper {
+    border       : 2px solid #ffffff !important;
+    border-radius: 20px !important;
 
-     input:focus {
-     border: 2px solid #3a9dee !important;
-      }
+}
+// .NgxEditor__Wrapper:focus {
+//     border       : 2px solid #ff0000 !important;
+//     border-radius: 20px !important;
+//     box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25) !important;
 
-      .sidebar .nav .nav-item.active .nav-link .menu-title {
-        color:#008cff !important;
-        font-family: "ubuntu-medium", sans-serif;
-        background-color: #e3f2fd !important;
-        // padding: 30px !important;
-        padding-left: 30px !important;
-        padding-right: 30px !important;
-           padding-top: 15px !important;
-        padding-bottom: 15px !important;
-        border-radius: 20px !important;
-      }
 
-      .sidebar .nav .nav-item.active .nav-link i {
-        color:    #3a9dee !important;
-    }
+// }
+
+
+
+
+.NgxEditor__Wrapper .NgxEditor__MenuBar {
+    border-top-left-radius : 20px !important;
+    border-top-right-radius: 20px !important;
+    // border-bottom: 1px solid #3a9dee !important;
+}
+
+.NgxEditor {
+    // border: 2px solid #3a9dee !important;
+overflow: auto !important;
+    border-bottom-left-radius : 20px !important;
+    border-bottom-right-radius: 20px !important;
+}
+
+// .NgxEditor:focus {
+//     border: 2px solid #000000 !important;
+
+//     border-bottom-left-radius : 20px !important;
+//     border-bottom-right-radius: 20px !important;
+// }
+
+::placeholder {
+    /* Most modern browsers support this now. */
+    color: #3a9dee !important;
+}
+
+input:focus {
+    border: 2px solid #3a9dee !important;
+}
+
+.sidebar .nav .nav-item.active .nav-link .menu-title {
+    color           : #008cff !important;
+    font-family     : "ubuntu-medium", sans-serif;
+    background-color: #e3f2fd !important;
+    // padding: 30px !important;
+    padding-left    : 30px !important;
+    padding-right   : 30px !important;
+    padding-top     : 15px !important;
+    padding-bottom  : 15px !important;
+    border-radius   : 20px !important;
+    font-weight     : bold !important;
+
+}
+
+.sidebar .nav .nav-item.active .nav-link i {
+    color: #3a9dee !important;
+}
+
+.card-title{
+    font-weight: bold ;
+}
+
+
+table th {
+    font-weight: 700 !important;
+}

@@ -18,6 +18,10 @@ import { ContentAnimateDirective } from './shared/directives/content-animate.dir
 import { TodoListComponent } from './apps/todo-list/todo-list.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { NgxEditorModule } from 'ngx-editor';
+import { ProductsComponent } from './products/products.component';
+import { BlogComponent } from './blog/blog.component';
+import { PagesComponent } from './pages/pages.component';
+import { BannerComponent } from './banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +35,10 @@ import { NgxEditorModule } from 'ngx-editor';
     SpinnerComponent,
     ContentAnimateDirective,
     CategoriesComponent,
+    ProductsComponent,
+    BlogComponent,
+    PagesComponent,
+    BannerComponent,
     
   ],
   imports: [
