@@ -388,3 +388,12 @@
     }
   }
 }
+
+input:focus {
+  border: 2px solid #ffffff !important;
+  border-radius: 20px;
+   }
+
+   ::placeholder { /* Most modern browsers support this now. */
+    color:    #3a9dee !important;
+ }

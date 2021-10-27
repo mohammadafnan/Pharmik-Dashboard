@@ -4,7 +4,7 @@
             <div class="card-body cardheader">
 
                 <div class="text-right">
-                    <button type="button" class="btn btn-primary btn-sm btn-rounded"
+                    <button type="button" class="btn btn-info btn-sm btn-rounded"
                         (click)="openModal(exampleModalContent)">
                         <i class="mdi mdi-plus mr-1"></i>Add category</button>
                 </div>
@@ -65,20 +65,20 @@
                                     </div>
 
                                 </div>
-<!-- 
+
                                 <div class="NgxEditor__Wrapper form-group mt-3">
                                     <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
                                     <ngx-editor [editor]="editor" [ngModel]="html" [disabled]="false"
                                         [placeholder]="'Type here...'"></ngx-editor>
-                                </div> -->
+                                </div>
 
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-success btn-rounded"
-                                (click)="modal.close()">Save</button>
+
                             <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal"
                                 (click)="modal.close()">Cancel</button>
+                            <button type="button" class="btn btn-info btn-rounded" (click)="modal.close()">Save</button>
                         </div>
                     </div>
                 </ng-template>
@@ -129,7 +129,8 @@
                                     <label class="badge badge-info badge-pill">yes</label>
                                 </td>
                                 <td>
-                                    <i class=" mdi mdi-pencil " style="color: blueviolet;font-size: 16px;"></i>
+                                    <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"
+                                        (click)="openModal(exampleModalContent)"></i>
 
                                 </td>
                             </tr>
@@ -146,7 +147,7 @@
                                     <label class="badge badge-info badge-pill">yes</label>
                                 </td>
                                 <td>
-                                    <i class=" mdi mdi-pencil " style="color: blueviolet;font-size: 16px;"></i>
+                                    <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"></i>
 
                                 </td>
                             </tr>
@@ -163,28 +164,129 @@
                                     <label class="badge badge-info badge-pill">yes</label>
                                 </td>
                                 <td>
-                                    <i class=" mdi mdi-pencil " style="color: blueviolet;font-size: 16px;"></i>
+                                    <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"></i>
 
                                 </td>
                             </tr>
-                            <!-- <tr>
+                            <tr>
                                 <td>
-                                    <img src="assets/images/faces/face4.jpg" class="mr-2" alt="image">
-                                    John Doe
+                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
                                 </td>
                                 <td>
-                                    Loosing control on server
+                                    anxiety meds </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill">yes</label>
                                 </td>
                                 <td>
-                                    <label class="badge badge-gradient-danger">REJECTED</label>
+                                    <label class="badge badge-info badge-pill">yes</label>
                                 </td>
                                 <td>
-                                    Dec 3, 2017
+                                    <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"></i>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
                                 </td>
                                 <td>
-                                    WD-12348
+                                    anxiety meds </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill">yes</label>
                                 </td>
-                            </tr> -->
+                                <td>
+                                    <label class="badge badge-info badge-pill">yes</label>
+                                </td>
+                                <td>
+                                    <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"></i>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
+                                </td>
+                                <td>
+                                    anxiety meds </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill">yes</label>
+                                </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill">yes</label>
+                                </td>
+                                <td>
+                                    <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"></i>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
+                                </td>
+                                <td>
+                                    anxiety meds </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill">yes</label>
+                                </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill">yes</label>
+                                </td>
+                                <td>
+                                    <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"></i>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
+                                </td>
+                                <td>
+                                    anxiety meds </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill">yes</label>
+                                </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill">yes</label>
+                                </td>
+                                <td>
+                                    <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"></i>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
+                                </td>
+                                <td>
+                                    anxiety meds </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill">yes</label>
+                                </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill">yes</label>
+                                </td>
+                                <td>
+                                    <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"></i>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
+                                </td>
+                                <td>
+                                    anxiety meds </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill">yes</label>
+                                </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill">yes</label>
+                                </td>
+                                <td>
+                                    <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"></i>
+
+                                </td>
+                            </tr>
 
                         </tbody>
                     </table>

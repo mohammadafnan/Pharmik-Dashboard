@@ -64,5 +64,42 @@
 
 @media (min-width: 992px){
     .modal-lg, .modal-xl {
-        max-width: 70% !important;
+        max-width: 60% !important;
     }}
+
+    .ProseMirror.NgxEditor__Content {
+        padding: 10px !important;
+        height: 200px !important;
+    }
+
+    .NgxEditor__Wrapper {
+        border: 2px solid #ffffff !important;
+        border-radius: 20px !important;
+ 
+    }
+    .NgxEditor__Wrapper:focus {
+        border: 2px solid #3a9dee !important;
+        border-radius: 20px !important;
+ 
+    }
+    .NgxEditor__Wrapper .NgxEditor__MenuBar {
+        border-top-left-radius: 20px !important;
+        border-top-right-radius: 20px !important;
+        // border-bottom: 1px solid #3a9dee !important;
+    }
+    .NgxEditor {
+ 
+    border-bottom-left-radius: 20px !important;
+        border-bottom-right-radius: 20px !important;  
+      }
+    //   .NgxEditor__Wrapper{
+    //     border-radius: 40px !important;
+    // }
+
+    ::placeholder { /* Most modern browsers support this now. */
+        color:    #3a9dee !important;
+     }
+
+     input:focus {
+     border: 2px solid #3a9dee !important;
+      }
