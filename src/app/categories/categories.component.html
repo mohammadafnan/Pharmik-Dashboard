@@ -8,12 +8,13 @@
                         (click)="openModal(exampleModalContent)">
                         <i class="mdi mdi-plus mr-1"></i>Add Category</button>
                 </div>
+                <!-- Modal Starts -->
+                
                 <ng-template class="modal fade" #exampleModalContent let-modal>
                     <div class="modal-content">
                         <div class="modal-header">
                             <h3 class="modal-title" id="exampleModalLabel">Add Category</h3>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                                (click)="modal.dismiss()">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modal.dismiss()">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -30,17 +31,17 @@
                                         <br />
                                         <input id="fileInput" type='file' (change)="onSelectFile($event)">
                                         <!-- <div class="ml-4 badge badge-info badge-pill">Category image</div> -->
-
+                
                                         <!-- <button *ngIf="url" (click)="delete()">delete</button> -->
                                     </div>
-
+                
                                     <div class="form-group col-lg-3 " style="margin-top: 6%;">
                                         <div class="ml-4 badge badge-info badge-pill">Category image</div>
                                     </div>
                                     <div class="form-group col-lg-6 mt-5">
                                         <input type="text" class="form-control " placeholder="Category name">
                                     </div>
-
+                
                                     <div class="form-group col-lg-6 mt-0">
                                         <input type="text" class="form-control " placeholder="Blog URL">
                                     </div>
@@ -49,8 +50,7 @@
                                             <div class="form-group col-lg-6">
                                                 <!-- Default switch -->
                                                 <div class="custom-control custom-switch mt-2">
-                                                    <input type="checkbox" class="custom-control-input"
-                                                        id="customSwitches">
+                                                    <input type="checkbox" class="custom-control-input" id="customSwitches">
                                                     <label class="custom-control-label" for="customSwitches">Show in
                                                         main menu</label>
                                                 </div>
@@ -59,8 +59,7 @@
                                             <div class="form-group col-lg-6">
                                                 <!-- Default switch -->
                                                 <div class="custom-control custom-switch mt-2">
-                                                    <input type="checkbox" class="custom-control-input"
-                                                        id="customSwitches">
+                                                    <input type="checkbox" class="custom-control-input" id="customSwitches">
                                                     <label class="custom-control-label" for="customSwitches">Show in
                                                         sidebar</label>
                                                 </div>
@@ -77,19 +76,19 @@
                                     <div class="form-group col-lg-4">
                                         <input type="text" class="form-control " placeholder="Page Keyword">
                                     </div>
-
+                
                                 </div>
-
+                
                                 <div class="NgxEditor__Wrapper form-group mt-3">
                                     <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
-                                    <ngx-editor [editor]="editor" [ngModel]="html" [disabled]="false"
-                                        [placeholder]="'Type here...'"></ngx-editor>
+                                    <ngx-editor [editor]="editor" [ngModel]="html" [disabled]="false" [placeholder]="'Type here...'">
+                                    </ngx-editor>
                                 </div>
-
+                
                             </form>
                         </div>
                         <div class="modal-footer">
-
+                
                             <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal"
                                 (click)="modal.close()">Cancel</button>
                             <button type="button" class="btn btn-info btn-rounded" (click)="modal.close()">Save</button>
