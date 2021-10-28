@@ -1,16 +1,16 @@
 <div class="row" id="proBanner">
   <div class="col-12">
-    <span class="align-items-center purchase-popup">
+    <!-- <span class="align-items-center purchase-popup">
       <p>Get tons of UI components, Plugins, multiple layouts, 20+ sample pages, and more!</p>
       <a href="https://www.bootstrapdash.com/product/purple-angular/?utm_source=organic&utm_medium=banner&utm_campaign=free-preview" target="_blank" class="btn download-button purchase-button btn-purple ml-auto btn-primary">Upgrade To Pro</a>
       <i class="mdi mdi-close"  (click)="toggleProBanner($event)"  id="bannerClose"></i>
-    </span>
+    </span> -->
   </div>
 </div>
 <div class="page-header">
   <h3 class="page-title">
-    <span class="page-title-icon bg-gradient-primary text-white mr-2">
-      <i class="mdi mdi-home"></i>                 
+    <span class="page-title-icon bg-info text-white mr-2">
+      <i class="mdi mdi-home" ></i>
     </span>
     Dashboard
   </h3>
@@ -20,14 +20,14 @@
         <span></span>Overview
         <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
       </li>
-    </ul> 
+    </ul>
   </nav>
 </div>
 <div class="row">
   <div class="col-md-4 stretch-card grid-margin">
     <div class="card bg-gradient-danger card-img-holder text-white">
       <div class="card-body">
-        <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>
+        <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
         <h4 class="font-weight-normal mb-3">Weekly Sales
           <i class="mdi mdi-chart-line mdi-24px float-right"></i>
         </h4>
@@ -39,7 +39,7 @@
   <div class="col-md-4 stretch-card grid-margin">
     <div class="card bg-gradient-info card-img-holder text-white">
       <div class="card-body">
-        <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>                  
+        <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
         <h4 class="font-weight-normal mb-3">Weekly Orders
           <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
         </h4>
@@ -51,7 +51,7 @@
   <div class="col-md-4 stretch-card grid-margin">
     <div class="card bg-gradient-success card-img-holder text-white">
       <div class="card-body">
-        <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>                                    
+        <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
         <h4 class="font-weight-normal mb-3">Visitors Online
           <i class="mdi mdi-diamond mdi-24px float-right"></i>
         </h4>
@@ -81,7 +81,8 @@
             </ul>
           </div>
         </div>
-        <canvas baseChart #visitSaleChart [chartType]="'bar'" [datasets]="visitSaleChartData" [labels]="visitSaleChartLabels" [options]="visitSaleChartOptions" [colors]="visitSaleChartColors"></canvas>
+        <canvas baseChart #visitSaleChart [chartType]="'bar'" [datasets]="visitSaleChartData"
+          [labels]="visitSaleChartLabels" [options]="visitSaleChartOptions" [colors]="visitSaleChartColors"></canvas>
       </div>
     </div>
   </div>
@@ -89,7 +90,8 @@
     <div class="card">
       <div class="card-body">
         <h4 class="card-title">Traffic Sources</h4>
-        <canvas baseChart [chartType]="'doughnut'" [datasets]="trafficChartData" [labels]="trafficChartLabels" [options]="trafficChartOptions" [colors]="trafficChartColors"></canvas>
+        <canvas baseChart [chartType]="'doughnut'" [datasets]="trafficChartData" [labels]="trafficChartLabels"
+          [options]="trafficChartOptions" [colors]="trafficChartColors"></canvas>
         <div id="traffic-chart-legend" class="rounded-legend legend-vertical legend-bottom-left pt-4">
           <ul>
             <li>
@@ -108,7 +110,7 @@
         </div>
       </div>
     </div>
-  </div>  
+  </div>
 </div>
 <div class="row">
   <div class="col-12 grid-margin">
@@ -217,12 +219,12 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-5 grid-margin stretch-card">
+  <!-- <div class="col-md-5 grid-margin stretch-card">
     <div class="card">
         <ngb-datepicker #dp [(ngModel)]="date" (navigate)="date = $event.next" class="w-100 border-0"></ngb-datepicker>
     </div>
-  </div>
-  <div class="col-md-7 grid-margin stretch-card">
+  </div> -->
+  <!-- <div class="col-md-7 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
         <h4 class="card-title">Recent Updates</h4>
@@ -259,7 +261,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
 <div class="row">
   <div class="col-md-7 grid-margin grid-margin-md-0 stretch-card">
@@ -297,7 +299,8 @@
                 </td>
                 <td>
                   <div class="progress">
-                    <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 25%"
+                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </td>
               </tr>
@@ -313,7 +316,8 @@
                 </td>
                 <td>
                   <div class="progress">
-                    <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 75%"
+                      aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </td>
               </tr>
@@ -329,7 +333,8 @@
                 </td>
                 <td>
                   <div class="progress">
-                    <div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 90%"
+                      aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </td>
               </tr>
@@ -345,7 +350,8 @@
                 </td>
                 <td>
                   <div class="progress">
-                    <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 50%"
+                      aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </td>
               </tr>
@@ -361,7 +367,8 @@
                 </td>
                 <td>
                   <div class="progress">
-                    <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 35%"
+                      aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </td>
               </tr>
@@ -377,7 +384,8 @@
                 </td>
                 <td>
                   <div class="progress">
-                    <div class="progress-bar bg-gradient-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-gradient-info" role="progressbar" style="width: 65%" aria-valuenow="65"
+                      aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </td>
               </tr>

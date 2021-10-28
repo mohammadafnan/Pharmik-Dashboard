@@ -20,6 +20,12 @@
         <i class="mdi mdi-home menu-icon"></i>
       </a>
     </li>
+    <li class="nav-item" [ngClass]="{ 'active': order.isActive }">
+      <a class="nav-link" routerLink="/order" routerLinkActive #order="routerLinkActive">
+        <span class="menu-title">Orders </span>
+        <i class="mdi mdi-pill menu-icon"></i>
+      </a>
+    </li>
     <!--Start add pages by afnan -->
     <li class="nav-item" [ngClass]="{ 'active': category.isActive }">
       <a class="nav-link" routerLink="/category" routerLinkActive #category="routerLinkActive">
@@ -51,6 +57,7 @@
         <i class="mdi mdi-image menu-icon"></i>
       </a>
     </li>
+   
     <!--End add pages by afnan -->
 
     <li class="nav-item"
