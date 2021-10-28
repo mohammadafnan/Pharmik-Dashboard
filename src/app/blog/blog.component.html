@@ -1,1 +1,346 @@
-<p>blog works!</p>
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div>
+            <div class="card-body cardheader">
+
+                <div class="text-right">
+                    <button type="button" class="btn btn-info btn-sm btn-rounded"
+                        (click)="openModal(exampleModalContent)">
+                        <i class="mdi mdi-plus mr-1"></i>Add Blog</button>
+                </div>
+                <ng-template class="modal fade" #exampleModalContent let-modal>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title" id="exampleModalLabel">Add Blog</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                (click)="modal.dismiss()">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- <p>Modal body text goes here </p> -->
+                            <form class="pt-3">
+                                <div class="row ">
+                                    <div class="form-group col-lg-3">
+                                        <label class="hoverable" for="fileInput">
+                                            <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'">
+                                            <div class="hover-text">Upload image</div>
+                                            <div class="background"></div>
+                                        </label>
+                                        <br />
+                                        <input id="fileInput" type='file' (change)="onSelectFile($event)">
+                                        <!-- <div class="ml-4 badge badge-info badge-pill">Category image</div> -->
+
+                                        <!-- <button *ngIf="url" (click)="delete()">delete</button> -->
+                                    </div>
+
+                                    <div class="form-group col-lg-3 " style="margin-top: 6%;">
+                                        <div class="ml-4 badge badge-info badge-pill">Blog image</div>
+                                    </div>
+                                    <div class="form-group col-lg-6 mt-5">
+                                        <input type="text" class="form-control " placeholder="Blog title">
+                                    </div>
+
+                                    <div class="form-group col-lg-6 mt-0">
+                                        <input type="text" class="form-control " placeholder="Blog URL">
+                                    </div>
+
+                                    <div class="form-group col-lg-6">
+                                        <input type="name" class="form-control " placeholder="Page Title">
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <input type="text" class="form-control " placeholder="Page Description">
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <input type="text" class="form-control " placeholder="Page Keyword">
+                                    </div>
+
+                                </div>
+
+                                <div class="NgxEditor__Wrapper form-group mt-3">
+                                    <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+                                    <ngx-editor [editor]="editor" [ngModel]="html" [disabled]="false"
+                                        [placeholder]="'Type here...'"></ngx-editor>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal"
+                                (click)="modal.close()">Cancel</button>
+                            <button type="button" class="btn btn-info btn-rounded" (click)="modal.close()">Save</button>
+                        </div>
+                    </div>
+                </ng-template>
+                <!-- Modal Ends -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Blog</h4>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Blog image
+                                </th>
+                                <th>
+                                    Blog title
+                                </th>
+                                <th>
+                                    Status </th>
+                                <th>
+                                    Action </th>
+                                <th>
+                                    Comments
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
+                                </td>
+                                <td>
+                                    antiboitic </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill ">active</label>
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+                                    <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i>
+
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
+                                </td>
+                                <td>
+                                    antiboitic </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill ">active</label>
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+                                    <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i>
+
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
+                                </td>
+                                <td>
+                                    antiboitic </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill ">active</label>
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+                                    <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i>
+
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
+                                </td>
+                                <td>
+                                    antiboitic </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill ">active</label>
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+                                    <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i>
+
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
+                                </td>
+                                <td>
+                                    antiboitic </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill ">active</label>
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+                                    <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i>
+
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
+                                </td>
+                                <td>
+                                    antiboitic </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill ">active</label>
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+                                    <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i>
+
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
+                                </td>
+                                <td>
+                                    antiboitic </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill ">active</label>
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+                                    <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i>
+
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
+                                </td>
+                                <td>
+                                    antiboitic </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill ">active</label>
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+                                    <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i>
+
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
+                                </td>
+                                <td>
+                                    antiboitic </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill ">active</label>
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+                                    <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i>
+
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
+                                </td>
+                                <td>
+                                    antiboitic </td>
+                                <td>
+                                    <label class="badge badge-info badge-pill ">active</label>
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+                                    <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i>
+
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
