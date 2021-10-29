@@ -19,7 +19,7 @@
         <div class="card bg-gradient-danger card-img-holder text-white">
             <div class="card-body">
                 <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                <h4 class="font-weight-normal mb-3">Weekly Sales
+                <h4 class="font-weight-normal mb-3">Total Sales
                     <i class="mdi mdi-chart-line mdi-24px float-right"></i>
                 </h4>
                 <h2 class="mb-5">$ 15,0000</h2>
@@ -31,7 +31,7 @@
         <div class="card bg-gradient-info card-img-holder text-white">
             <div class="card-body">
                 <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                <h4 class="font-weight-normal mb-3">Weekly Orders
+                <h4 class="font-weight-normal mb-3">Active Orders
                     <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
                 </h4>
                 <h2 class="mb-5">45,6334</h2>
@@ -43,7 +43,7 @@
         <div class="card bg-gradient-success card-img-holder text-white">
             <div class="card-body">
                 <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-                <h4 class="font-weight-normal mb-3">Visitors Online
+                <h4 class="font-weight-normal mb-3">Pending deliveries
                     <i class="mdi mdi-diamond mdi-24px float-right"></i>
                 </h4>
                 <h2 class="mb-5">95,5741</h2>
@@ -68,7 +68,7 @@
                 <div class="row ">
                     <div class="form-group col-lg-3">
                         <label class="hoverable" for="fileInput">
-                            <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'">
+                            <img class="img1 " [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'">
                             <div class="hover-text">Upload image</div>
                             <div class="background"></div>
                         </label>
@@ -201,14 +201,28 @@
                                 </td>
                                 <td>
                                     $ 1000 </td>
-                                <td class="text-center">
-                                    <img src="assets/images/faces/paypal2.jpg" class="mr-2 " alt="image">
+                                <td style="padding-left: 4%;">
+                                    <img src="https://img.icons8.com/color/48/000000/bitcoin--v1.png" />
                                 </td>
                                 <td>
                                     Dec 7, 2021
                                 </td>
                                 <td>
-                                    <label class="badge badge-success badge-pill">DONE</label>
+                                    <div ngbDropdown>
+                                        <button class="btn btn-success btn-sm btn-rounded" type="button"
+                                            id="dropdownMenuButton5" ngbDropdownToggle>
+                                            Done
+                                        </button>
+                                        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton5">
+                                            <a class="dropdown-item">Done</a>
+                                            <a class="dropdown-item">In progress</a>
+                                            <a class="dropdown-item">On hold</a>
+                                            <a class="dropdown-item">Rejected</a>
+
+
+                                        </div>
+                                    </div>
+                                    <!-- <label class="badge badge-success badge-pill">DONE</label> -->
                                 </td>
                                 <td>
                                     <i class=" mdi mdi-content-paste " style="color: #1a8ae3;font-size: 16px;"
@@ -228,16 +242,31 @@
                                 </td>
                                 <td>
                                     $ 1500 </td>
-                                <td class="text-center">
-                                    <img src="assets/images/faces/visa.png" class="mr-2 " alt="image">
+                                <td style="padding-left: 4%;">
+                                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" />
                                 </td>
 
                                 <td>
                                     june 7, 2021
                                 </td>
                                 <td>
-                                    <label class="badge badge-warning badge-pill">In progress</label>
+                                    <div ngbDropdown>
+                                        <button class="btn btn-warning btn-sm btn-rounded" type="button"
+                                            id="dropdownMenuButton5" ngbDropdownToggle>
+                                            In progess
+                                        </button>
+                                        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton5">
+                                            <a class="dropdown-item">Done</a>
+                                            <a class="dropdown-item">In progress</a>
+                                            <a class="dropdown-item">On hold</a>
+                                            <a class="dropdown-item">Rejected</a>
+
+
+                                        </div>
+                                    </div>
+                                    <!-- <label class="badge badge-warning badge-pill">In progress</label> -->
                                 </td>
+
                                 <td>
                                     <i class=" mdi mdi-content-paste " style="color: #1a8ae3;font-size: 16px;"
                                         (click)="openModal(exampleModalContent)"></i>
@@ -256,14 +285,29 @@
                                 </td>
                                 <td>
                                     $ 2000 </td>
-                                <td class="text-center">
-                                    <img src="assets/images/faces/paypal2.jpg" class="mr-2 " alt="image">
+                                <td style="padding-left: 4%;">
+                                    <img src="https://img.icons8.com/color/48/000000/visa.png" />
                                 </td>
+
                                 <td>
                                     aug 7, 2021
                                 </td>
                                 <td>
-                                    <label class="badge badge-info badge-pill">On hold</label>
+                                    <div ngbDropdown>
+                                        <button class="btn btn-info btn-sm btn-rounded" type="button"
+                                            id="dropdownMenuButton5" ngbDropdownToggle>
+                                            On hold
+                                        </button>
+                                        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton5">
+                                            <a class="dropdown-item">Done</a>
+                                            <a class="dropdown-item">In progress</a>
+                                            <a class="dropdown-item">On hold</a>
+                                            <a class="dropdown-item">Rejected</a>
+
+
+                                        </div>
+                                    </div>
+                                    <!-- <label class="badge badge-info badge-pill">On hold</label> -->
                                 </td>
                                 <td>
                                     <i class=" mdi mdi-content-paste " style="color: #1a8ae3;font-size: 16px;"
@@ -283,22 +327,379 @@
                                 </td>
                                 <td>
                                     $ 1200 </td>
-                                <td class="text-center">
-                                    <img src="assets/images/faces/visa.png" class="mr-2 " alt="image">
+                                <td style="padding-left: 4%;">
+                                    <img src="https://img.icons8.com/color/48/000000/visa.png" />
                                 </td>
                                 <td>
                                     Dec 7, 2021
                                 </td>
                                 <td>
-                                    <label class="badge badge-danger badge-pill">Rejected</label>
+                                    <div ngbDropdown>
+                                        <button class="btn btn-danger btn-sm btn-rounded" type="button"
+                                            id="dropdownMenuButton5" ngbDropdownToggle>
+                                            Rejected
+                                        </button>
+                                        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton5">
+                                            <a class="dropdown-item">Done</a>
+                                            <a class="dropdown-item">In progress</a>
+                                            <a class="dropdown-item">On hold</a>
+                                            <a class="dropdown-item">Rejected</a>
+
+
+                                        </div>
+                                    </div>
+                                    <!-- <label class="badge badge-danger badge-pill">Rejected</label> -->
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-content-paste " style="color: #1a8ae3;font-size: 16px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/face1.jpg" class="mr-2 " alt="image">
+                                    David Grey
+                                </td>
+                                <td>
+                                    10345 </td>
+                                <td>
+                                    Dec 5, 2021
+
+                                </td>
+                                <td>
+                                    $ 1000 </td>
+                                <td style="padding-left: 4%;">
+                                    <img src="https://img.icons8.com/color/48/000000/bitcoin--v1.png" />
+                                </td>
+                                <td>
+                                    Dec 7, 2021
+                                </td>
+                                <td>
+                                    <div ngbDropdown>
+                                        <button class="btn btn-success btn-sm btn-rounded" type="button"
+                                            id="dropdownMenuButton5" ngbDropdownToggle>
+                                            Done
+                                        </button>
+                                        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton5">
+                                            <a class="dropdown-item">Done</a>
+                                            <a class="dropdown-item">In progress</a>
+                                            <a class="dropdown-item">On hold</a>
+                                            <a class="dropdown-item">Rejected</a>
+
+
+                                        </div>
+                                    </div>
+                                    <!-- <label class="badge badge-success badge-pill">DONE</label> -->
                                 </td>
                                 <td>
                                     <i class=" mdi mdi-content-paste " style="color: #1a8ae3;font-size: 16px;"
                                         (click)="openModal(exampleModalContent)"></i>
                                 </td>
                             </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/face2.jpg" class="mr-2" alt="image">
+                                    Johnson
+                                </td>
+                                <td>
+                                    10346 </td>
+                                <td>
+                                    june 5, 2021
+
+                                </td>
+                                <td>
+                                    $ 1500 </td>
+                                <td style="padding-left: 4%;">
+                                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" />
+                                </td>
+
+                                <td>
+                                    june 7, 2021
+                                </td>
+                                <td>
+                                    <div ngbDropdown>
+                                        <button class="btn btn-warning btn-sm btn-rounded" type="button"
+                                            id="dropdownMenuButton5" ngbDropdownToggle>
+                                            In progess
+                                        </button>
+                                        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton5">
+                                            <a class="dropdown-item">Done</a>
+                                            <a class="dropdown-item">In progress</a>
+                                            <a class="dropdown-item">On hold</a>
+                                            <a class="dropdown-item">Rejected</a>
+
+
+                                        </div>
+                                    </div>
+                                    <!-- <label class="badge badge-warning badge-pill">In progress</label> -->
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-content-paste " style="color: #1a8ae3;font-size: 16px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/face3.jpg" class="mr-2" alt="image">
+                                    Marina
+                                </td>
+                                <td>
+                                    10347 </td>
+                                <td>
+                                    aug 5, 2021
+
+                                </td>
+                                <td>
+                                    $ 2000 </td>
+                                <td style="padding-left: 4%;">
+                                    <img src="https://img.icons8.com/color/48/000000/visa.png" />
+                                </td>
+
+                                <td>
+                                    aug 7, 2021
+                                </td>
+                                <td>
+                                    <div ngbDropdown>
+                                        <button class="btn btn-info btn-sm btn-rounded" type="button"
+                                            id="dropdownMenuButton5" ngbDropdownToggle>
+                                            On hold
+                                        </button>
+                                        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton5">
+                                            <a class="dropdown-item">Done</a>
+                                            <a class="dropdown-item">In progress</a>
+                                            <a class="dropdown-item">On hold</a>
+                                            <a class="dropdown-item">Rejected</a>
+
+
+                                        </div>
+                                    </div>
+                                    <!-- <label class="badge badge-info badge-pill">On hold</label> -->
+                                </td>
+                                <td>
+                                    <i class=" mdi mdi-content-paste " style="color: #1a8ae3;font-size: 16px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/face4.jpg" class="mr-2" alt="image">
+                                    John Doe
+                                </td>
+                                <td>
+                                    10348 </td>
+                                <td>
+                                    Dec 5, 2021
+
+                                </td>
+                                <td>
+                                    $ 1200 </td>
+                                <td style="padding-left: 4%;">
+                                    <img src="https://img.icons8.com/color/48/000000/visa.png" />
+                                </td>
+                                <td>
+                                    Dec 7, 2021
+                                </td>
+                                <td>
+                                    <div ngbDropdown>
+                                        <button class="btn btn-danger btn-sm btn-rounded" type="button"
+                                            id="dropdownMenuButton5" ngbDropdownToggle>
+                                            Rejected
+                                        </button>
+                                        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton5">
+                                            <a class="dropdown-item">Done</a>
+                                            <a class="dropdown-item">In progress</a>
+                                            <a class="dropdown-item">On hold</a>
+                                            <a class="dropdown-item">Rejected</a>
+
+
+                                        </div>
+                                    </div>
+                                    <!-- <label class="badge badge-danger badge-pill">Rejected</label> -->
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-content-paste " style="color: #1a8ae3;font-size: 16px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/face1.jpg" class="mr-2 " alt="image">
+                                    David Grey
+                                </td>
+                                <td>
+                                    10345 </td>
+                                <td>
+                                    Dec 5, 2021
+
+                                </td>
+                                <td>
+                                    $ 1000 </td>
+                                <td style="padding-left: 4%;">
+                                    <img src="https://img.icons8.com/color/48/000000/bitcoin--v1.png" />
+                                </td>
+                                <td>
+                                    Dec 7, 2021
+                                </td>
+                                <td>
+                                    <div ngbDropdown>
+                                        <button class="btn btn-success btn-sm btn-rounded" type="button"
+                                            id="dropdownMenuButton5" ngbDropdownToggle>
+                                            Done
+                                        </button>
+                                        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton5">
+                                            <a class="dropdown-item">Done</a>
+                                            <a class="dropdown-item">In progress</a>
+                                            <a class="dropdown-item">On hold</a>
+                                            <a class="dropdown-item">Rejected</a>
+
+
+                                        </div>
+                                    </div>
+                                    <!-- <label class="badge badge-success badge-pill">DONE</label> -->
+                                </td>
+                                <td>
+                                    <i class=" mdi mdi-content-paste " style="color: #1a8ae3;font-size: 16px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/face2.jpg" class="mr-2" alt="image">
+                                    Johnson
+                                </td>
+                                <td>
+                                    10346 </td>
+                                <td>
+                                    june 5, 2021
+
+                                </td>
+                                <td>
+                                    $ 1500 </td>
+                                <td style="padding-left: 4%;">
+                                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" />
+                                </td>
+
+                                <td>
+                                    june 7, 2021
+                                </td>
+                                <td>
+                                    <div ngbDropdown>
+                                        <button class="btn btn-warning btn-sm btn-rounded" type="button"
+                                            id="dropdownMenuButton5" ngbDropdownToggle>
+                                            In progess
+                                        </button>
+                                        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton5">
+                                            <a class="dropdown-item">Done</a>
+                                            <a class="dropdown-item">In progress</a>
+                                            <a class="dropdown-item">On hold</a>
+                                            <a class="dropdown-item">Rejected</a>
+
+
+                                        </div>
+                                    </div>
+                                    <!-- <label class="badge badge-warning badge-pill">In progress</label> -->
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-content-paste " style="color: #1a8ae3;font-size: 16px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/face3.jpg" class="mr-2" alt="image">
+                                    Marina
+                                </td>
+                                <td>
+                                    10347 </td>
+                                <td>
+                                    aug 5, 2021
+
+                                </td>
+                                <td>
+                                    $ 2000 </td>
+                                <td style="padding-left: 4%;">
+                                    <img src="https://img.icons8.com/color/48/000000/visa.png" />
+                                </td>
+
+                                <td>
+                                    aug 7, 2021
+                                </td>
+                                <td>
+                                    <div ngbDropdown>
+                                        <button class="btn btn-info btn-sm btn-rounded" type="button"
+                                            id="dropdownMenuButton5" ngbDropdownToggle>
+                                            On hold
+                                        </button>
+                                        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton5">
+                                            <a class="dropdown-item">Done</a>
+                                            <a class="dropdown-item">In progress</a>
+                                            <a class="dropdown-item">On hold</a>
+                                            <a class="dropdown-item">Rejected</a>
+
+
+                                        </div>
+                                    </div>
+                                    <!-- <label class="badge badge-info badge-pill">On hold</label> -->
+                                </td>
+                                <td>
+                                    <i class=" mdi mdi-content-paste " style="color: #1a8ae3;font-size: 16px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="assets/images/faces/face4.jpg" class="mr-2" alt="image">
+                                    John Doe
+                                </td>
+                                <td>
+                                    10348 </td>
+                                <td>
+                                    Dec 5, 2021
+
+                                </td>
+                                <td>
+                                    $ 1200 </td>
+                                <td style="padding-left: 4%;">
+                                    <img src="https://img.icons8.com/color/48/000000/visa.png" />
+                                </td>
+                                <td>
+                                    Dec 7, 2021
+                                </td>
+                                <td>
+                                    <div ngbDropdown>
+                                        <button class="btn btn-danger btn-sm btn-rounded" type="button"
+                                            id="dropdownMenuButton5" ngbDropdownToggle>
+                                            Rejected
+                                        </button>
+                                        <div ngbDropdownMenu aria-labelledby="dropdownMenuButton5">
+                                            <a class="dropdown-item">Done</a>
+                                            <a class="dropdown-item">In progress</a>
+                                            <a class="dropdown-item">On hold</a>
+                                            <a class="dropdown-item">Rejected</a>
+
+
+                                        </div>
+                                    </div>
+                                    <!-- <label class="badge badge-danger badge-pill">Rejected</label> -->
+                                </td>
+
+                                <td>
+                                    <i class=" mdi mdi-content-paste " style="color: #1a8ae3;font-size: 16px;"
+                                        (click)="openModal(exampleModalContent)"></i>
+                                </td>
+                            </tr>
                         </tbody>
+
                     </table>
+                    <div>
+                        <ngb-pagination [collectionSize]="40" [pageSize]="10" [page]="1" aria-label="Default pagination"
+                            class="d-flex justify-content-end pagination-info pagination-rounded mt-3">
+                        </ngb-pagination>
+                    </div>
                 </div>
             </div>
         </div>
