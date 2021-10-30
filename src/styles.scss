@@ -71,8 +71,8 @@
 }
 
 .ProseMirror.NgxEditor__Content {
-    padding: 10px !important;
-    height : 200px !important;
+    padding : 10px !important;
+    height  : 200px !important;
     overflow: auto !important;
 
 }
@@ -80,10 +80,11 @@
 .NgxEditor__Wrapper {
     border       : 2px solid #ffffff !important;
     border-radius: 20px !important;
-    overflow: auto !important;
+    overflow     : auto !important;
 
 
 }
+
 // .NgxEditor__Wrapper:focus {
 //     border       : 2px solid #ff0000 !important;
 //     border-radius: 20px !important;
@@ -98,14 +99,14 @@
 .NgxEditor__Wrapper .NgxEditor__MenuBar {
     border-top-left-radius : 20px !important;
     border-top-right-radius: 20px !important;
-    overflow: auto !important;
+    overflow               : auto !important;
 
     // border-bottom: 1px solid #3a9dee !important;
 }
 
 .NgxEditor {
     // border: 2px solid #3a9dee !important;
-overflow: auto !important;
+    overflow                  : auto !important;
     border-bottom-left-radius : 20px !important;
     border-bottom-right-radius: 20px !important;
 }
@@ -127,27 +128,27 @@ input:focus {
 }
 
 .sidebar .nav .nav-item.active .nav-link .menu-title {
-    color           : #ffffff !important;
+    color           : #198ae3 !important;
     font-family     : "ubuntu-medium", sans-serif;
-    background-color: #005a9b !important;
+    background-color: #e3f2fd !important;
 
     // background-color: #0077cc !important;
     // padding: 30px !important;
-    padding-left    : 30px !important;
-    padding-right   : 30px !important;
-    padding-top     : 15px !important;
-    padding-bottom  : 15px !important;
-    border-radius   : 20px !important;
-    font-weight     : bold !important;
+    padding-left  : 30px !important;
+    padding-right : 30px !important;
+    padding-top   : 15px !important;
+    padding-bottom: 15px !important;
+    border-radius : 20px !important;
+    font-weight   : bold !important;
 
 }
 
 .sidebar .nav .nav-item.active .nav-link i {
-    color:#005a9b !important;
+    color: #198ae3 !important;
 }
 
-.card-title{
-    font-weight: bold ;
+.card-title {
+    font-weight: bold;
 }
 
 
@@ -157,13 +158,25 @@ table th {
 
 .content-wrapper {
     background-color: #eef7ff !important;
- 
+
 }
 
-.imgcenter{
-    margin: auto; left: 0; right: 0;
+.imgcenter {
+    margin: auto;
+    left  : 0;
+    right : 0;
 }
 
-.page-title-icon{
+.page-title-icon {
     border-radius: 20px !important;
+}
+
+table {
+    white-space: nowrap;
+}
+
+.btn.btn-icon {
+    width  : 32px;
+    height : 32px;
+    padding: 0;
 }
