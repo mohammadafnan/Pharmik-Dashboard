@@ -20,7 +20,7 @@
        font-family: Lato;
      }
      
-     .img1 {
+     .img {
        height: 100%;
        width: 100%;
        border-radius: 50%;
@@ -29,8 +29,8 @@
        position: relative;
        display: block;
        cursor: pointer;
-       height: 150px;
-       width: 150px;
+       height: 100px;
+       width: 100px;
        border: 5px solid #f2edf3;
        border-radius: 50%;
      }
@@ -73,3 +73,6 @@
       flex-wrap: wrap;
       justify-content: space-evenly;
   }
+
+  //user card info //
+  
