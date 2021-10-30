@@ -158,8 +158,16 @@ table th {
 
 .content-wrapper {
     background-color: #eef7ff !important;
+    padding   : 1.75 rem 2.25 rem !important;
 
 }
+
+// .content-wrapper {
+//     background: #f2edf3;
+//     padding   : 1.75 rem 2.25 rem;
+//     width     : 100%;
+//     flex-grow : 1;
+// }
 
 .imgcenter {
     margin: auto;
@@ -179,4 +187,8 @@ table {
     width  : 32px;
     height : 32px;
     padding: 0;
+}
+
+.grid-margin {
+    margin-bottom: 0 !important;
 }
