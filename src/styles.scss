@@ -158,13 +158,13 @@ table th {
 
 .content-wrapper {
     background-color: #eef7ff !important;
-    padding   : 1.75 rem 2.25 rem !important;
+    // padding         : 1.75 rem 2.25 rem !important;
 
 }
 
 // .content-wrapper {
 //     background: #f2edf3;
-//     padding   : 1.75 rem 2.25 rem;
+//     padding   : 1.75 rem 2.25 rem !important;
 //     width     : 100%;
 //     flex-grow : 1;
 // }
@@ -191,4 +191,8 @@ table {
 
 .grid-margin {
     margin-bottom: 0 !important;
+}
+
+.modal-content{
+    background-color: #e3f2fd ;
 }

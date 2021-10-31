@@ -1,7 +1,7 @@
 /* Miscellanoeous */
 body,
 html {
-  overflow-x: hidden;
+  overflow-x   : hidden;
   padding-right: 0 !important; // resets padding right added by Bootstrap modal
 }
 
@@ -16,30 +16,32 @@ body {
 }
 
 .page-body-wrapper {
-  min-height: calc(100vh - #{$navbar-height});
+  min-height : calc(100vh - #{$navbar-height});
   padding-top: $navbar-height;
   @include display-flex();
   @include flex-direction(row);
-  padding-left: 0;
+  padding-left : 0;
   padding-right: 0;
 
   &.full-page-wrapper {
-    width: 100%;
-    min-height: 100vh;
+    width      : 100%;
+    min-height : 100vh;
     padding-top: 0;
   }
 }
 
 .main-panel {
   transition: width $action-transition-duration $action-transition-timing-function, margin $action-transition-duration $action-transition-timing-function;
-  width: calc(100% - #{$sidebar-width-lg});
+  width     : calc(100% - #{$sidebar-width-lg});
   min-height: calc(100vh - #{$navbar-height});
   @include display-flex();
   @include flex-direction(column);
+
   @media (max-width: 991px) {
     margin-left: 0;
-    width: 100%;
+    width      : 100%;
   }
+
   &.main-panel-only {
     transition: none;
   }
@@ -47,7 +49,9 @@ body {
 
 .content-wrapper {
   background: $content-bg;
-  padding: 2.75rem 2.25rem;
+  padding: 1.75rem 2.25rem;
+  // padding   : 1.75 rem 2.25 rem !important;
+
   width: 100%;
   @include flex-grow(1);
 }
@@ -58,15 +62,15 @@ body {
 
 pre {
   background: color(gray-lighter);
-  padding: 15px;
-  font-size: 14px;
+  padding   : 15px;
+  font-size : 14px;
 }
 
 code {
-  padding: 5px;
-  color: theme-color(danger);
-  font-family: $type1-light;
-  font-size: $default-font-size;
+  padding      : 5px;
+  color        : theme-color(danger);
+  font-family  : $type1-light;
+  font-size    : $default-font-size;
   border-radius: 4px;
 }
 
@@ -75,72 +79,81 @@ code {
   @extend .justify-content-between;
   @extend .align-items-center;
   margin: 0 0 1.5rem 0;
+
   .breadcrumb {
-    border: 0;
+    border       : 0;
     margin-bottom: 0;
   }
 }
+
 .page-title {
-  color: $black;
-  font-size: 1.125rem;
+  color        : $black;
+  font-size    : 1.125rem;
   margin-bottom: 0;
+
   .page-title-icon {
-    display: inline-block;
-    width: 36px;
-    height: 36px;
+    display      : inline-block;
+    width        : 36px;
+    height       : 36px;
     border-radius: 4px;
-    text-align: center;
-    box-shadow: 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35);
+    text-align   : center;
+    box-shadow   : 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35);
+
     i {
-      font-size: .9375rem;
+      font-size  : .9375rem;
       line-height: 36px;
     }
   }
 }
+
 .purchase-popup {
-  width: 100%;
-  z-index: 9999;
-  background: #fff;
-  padding: 15px;
-  display: flex;
+  width        : 100%;
+  z-index      : 9999;
+  background   : #fff;
+  padding      : 15px;
+  display      : flex;
   margin-bottom: 1rem;
-  @include media-breakpoint-down(md) { 
-    padding: 15px 20px; 
+
+  @include media-breakpoint-down(md) {
+    padding: 15px 20px;
     display: block;
   }
 
 
   .btn {
     margin-right: 20px;
-    font-weight: 500;
+    font-weight : 500;
+
     &.purchase-button {
-      color: #fff;
-      border: none;
-      line-height: 1;
+      color         : #fff;
+      border        : none;
+      line-height   : 1;
       vertical-align: middle;
-      min-height: auto;
+      min-height    : auto;
     }
   }
 
   p {
-    margin-bottom: auto;
-    margin-top: auto;
-    color: #1c273c;
-    font-weight: 400;
+    margin-bottom : auto;
+    margin-top    : auto;
+    color         : #1c273c;
+    font-weight   : 400;
     vertical-align: middle;
-    line-height: 1;
-    @include media-breakpoint-down(md) { 
+    line-height   : 1;
+
+    @include media-breakpoint-down(md) {
       margin-bottom: 10px;
     }
   }
 
   i {
     vertical-align: middle;
-    line-height: 1;
-    margin: auto 0;
-    color: darken(#e4e4e4,20%);
+    line-height   : 1;
+    margin        : auto 0;
+    color         : darken(#e4e4e4, 20%);
   }
 }
+
 .removeProbanner {
   #proBanner {
     display: none;
