@@ -54,7 +54,7 @@
 </div>
 <!-- Modal Starts -->
 
-<ng-template class="modal fade" #exampleModalContent let-modal>
+<ng-template class="modal fade modal_width" #exampleModalContent let-modal>
     <div class="modal-content">
         <div class="modal-header">
             <h3 class="modal-title" id="exampleModalLabel">Order Detail</h3>
@@ -62,9 +62,9 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body ">
             <!-- <p>Modal body text goes here </p> -->
-            <form class="pt-3">
+            <form class=" pt-3">
                 <div class="row">
                     <div class="col-12 grid-margin ">
                         <div class="row   parent">
@@ -319,18 +319,25 @@
 
                                         </ngb-accordion>
                                     </div>
-                                    <div class="form-group col-lg-6   " style="padding-top: 10%;padding-bottom: 10%;">
-                                        <ngb-accordion [closeOthers]="true" activeIds="collapse-8"
-                                            class="accordion-filled">
-                                            <ngb-panel id="collapse-7" title="Status : delivered">
-                                                <ng-template ngbPanelContent>
+                                    <div class="form-group col-lg-6  mt-3 ml-0">
+                                        <div class="row"> <button type="button" class="btn btn-light btn-rounded ml-5"
+                                                data-dismiss="modal" (click)="modal.close()">Cancel</button>
+                                            <button type="button" class="btn btn-info btn-rounded ml-5"
+                                                (click)="modal.close()">Save</button></div>
 
-                                                </ng-template>
-                                            </ngb-panel>
-
-
-                                        </ngb-accordion>
                                     </div>
+                                    <!-- <div class="form-group col-lg-6   " style="padding-top: 10%;padding-bottom: 10%;">
+                                                                            <ngb-accordion [closeOthers]="true" activeIds="collapse-8"
+                                                                                class="accordion-filled">
+                                                                                <ngb-panel id="collapse-7" title="Status : delivered">
+                                                                                    <ng-template ngbPanelContent>
+                                    
+                                                                                    </ng-template>
+                                                                                </ngb-panel>
+                                    
+                                    
+                                                                            </ngb-accordion>
+                                                                        </div> -->
                                 </div>
                             </div>
 
@@ -341,12 +348,12 @@
 
             </form>
         </div>
-        <div class="modal-footer">
+        <!-- <div class="modal-footer">
 
             <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal"
                 (click)="modal.close()">Cancel</button>
             <button type="button" class="btn btn-info btn-rounded" (click)="modal.close()">Save</button>
-        </div>
+        </div> -->
     </div>
 </ng-template>
 <!-- Modal Ends -->
