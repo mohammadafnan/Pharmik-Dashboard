@@ -157,7 +157,7 @@ table th {
 }
 
 .content-wrapper {
-    background-color: #eef7ff !important;
+    background-color   : #eef7ff !important;
     // padding         : 1.75 rem 2.25 rem !important;
 
 }
@@ -193,18 +193,22 @@ table {
     margin-bottom: 0 !important;
 }
 
-.modal-content{
-    background-color: #e3f2fd ;
+.modal-content {
+    background-color: #e3f2fd;
 }
-.accordion.accordion-filled .card .card-header button{
+
+.accordion.accordion-filled .card .card-header button {
     padding    : 2 rem 4.5 rem 2 rem 2 rem;
     transition : all 0.2s linear;
     font-size  : 20px !important;
     font-weight: bold !important;
-  }
+}
 
 //   .modal-lg,
 //     .modal-xl {
 //         max-width: 50% !important;
 //     }
 
+// .modal-footer {
+//     padding: -20px !important;
+// }

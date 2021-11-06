@@ -24,56 +24,61 @@
    // image uploader
    
    p {
-       font-family: Lato;
-     }
-     
-     img {
-       height: 100%;
-       width: 100%;
-       border-radius: 50%;
-     }
-     .hoverable{
-       position: relative;
-       display: block;
-       cursor: pointer;
-       height: 150px;
-       width: 150px;
-       border: 5px solid #f2edf3;
-       border-radius: 50%;
-     }
-     .hoverable .hover-text{
-       position: absolute;
-       display: none;
-       top: 50%;
-       left:  50%;
-       transform: translate(-50%,-50%);   
-       z-index: 2;
-       font-size: 14px;
-       font-weight: bold;
-       text-align: center;
-     }
-     .hoverable .background{
-       position: absolute;
-       display: none;
-       top: 0;
-       left:  0;
-       bottom: 0;
-       right: 0;
-       background-color:rgba(255, 255, 255, 0.5);
-       pointer-events: none;
-       border-radius: 50%;
-       z-index: 1;
-     }
-     .hoverable:hover .hover-text{
-       display: block;
-     }
-     .hoverable:hover .background{
-       display: block;
-     }
-     
-     #fileInput{
-       display: none;
-     }
+    font-family: Lato;
+  }
+  
+  .img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+  }
+  .hoverable{
+    position: relative;
+    display: block;
+    cursor: pointer;
+    height: 220px;
+    width: 220px;
+    border: 5px solid #f2edf3;
+    border-radius: 50%;
+    box-shadow: -1px 3px 38px -18px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -1px 3px 38px -18px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 3px 38px -18px rgba(0,0,0,0.75);
+  }
+  .hoverable .hover-text{
+    position: absolute;
+    display: none;
+    top: 50%;
+    left:  50%;
+    transform: translate(-50%,-50%);   
+    z-index: 2;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .hoverable .background{
+    position: absolute;
+    display: none;
+    top: 0;
+    left:  0;
+    bottom: 0;
+    right: 0;
+    background-color:rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .hoverable:hover .hover-text{
+    display: block;
+  }
+  .hoverable:hover .background{
+    display: block;
+  }
+  
+  #fileInput{
+    display: none;
+  }
+
+  
 
      .line_height{
       line-height: 20px ;
