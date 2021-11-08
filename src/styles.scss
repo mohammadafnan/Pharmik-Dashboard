@@ -73,14 +73,14 @@
 .ProseMirror.NgxEditor__Content {
     padding : 10px !important;
     height  : 200px !important;
-    overflow: auto !important;
+    // overflow: auto !important;
 
 }
 
 .NgxEditor__Wrapper {
     border       : 2px solid #ffffff !important;
     border-radius: 20px !important;
-    overflow     : auto !important;
+    // overflow     : auto !important;
 
 
 }
@@ -99,7 +99,7 @@
 .NgxEditor__Wrapper .NgxEditor__MenuBar {
     border-top-left-radius : 20px !important;
     border-top-right-radius: 20px !important;
-    overflow               : auto !important;
+    overflow-x :scroll !important;
 
     // border-bottom: 1px solid #3a9dee !important;
 }
