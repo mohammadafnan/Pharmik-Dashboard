@@ -21,17 +21,17 @@ p {
 img {
   height       : 100%;
   width        : 100%;
-  border-radius: 50%;
+  border-radius: 5%;
 }
 
 .hoverable {
   position     : relative;
   display      : block;
   cursor       : pointer;
-  height       : 150px;
-  width        : 150px;
+  //  height       : 250px;
+  // width        : 450px;
   border       : 5px solid #f2edf3;
-  border-radius: 50%;
+  border-radius: 5%;
 }
 
 .hoverable .hover-text {
@@ -55,7 +55,7 @@ img {
   right           : 0;
   background-color: rgba(255, 255, 255, 0.5);
   pointer-events  : none;
-  border-radius   : 50%;
+  border-radius: 5%;
   z-index         : 1;
 }
 

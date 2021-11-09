@@ -33,9 +33,10 @@
                             <!-- <p>Modal body text goes here </p> -->
                             <form class="pt-3">
                                 <div class="row ">
-                                    <div class="form-group col-lg-3">
-                                        <label class="hoverable" for="fileInput">
-                                            <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'">
+                                    <!-- imgcenter -->
+                                    <div class="ml-0 form-group col-lg-2">
+                                        <label class="hoverable " for="fileInput">
+                                            <img class="img" [src]="url ? url : 'assets/images/faces/blog1.jpg'">
                                             <div class="hover-text">Upload image</div>
                                             <div class="background"></div>
                                         </label>
@@ -44,6 +45,62 @@
                                         <!-- <div class="ml-4 badge badge-info badge-pill">Category image</div> -->
 
                                         <!-- <button *ngIf="url" (click)="delete()">delete</button> -->
+
+                                    </div>
+
+                                    <div class="form-group col-lg-8 mt-3" style="margin-left: 15% !important">
+                                        <div class="row">
+
+
+                                            <div class="form-group col-lg-6 mt-0">
+                                                <input type="text" class="form-control " placeholder="Blog Title">
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <input type="name" class="form-control " placeholder="Blog URL">
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <input type="text" class="form-control " placeholder="Page Title">
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <input type="text" class="form-control " placeholder="Page Description">
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <input type="text" class="form-control " placeholder="page keyword">
+                                            </div>
+                                            <div class="form-group col-lg-6 mt-0">
+                                                <input type="text" class="form-control " placeholder="Comments">
+                                            </div>
+                                            <!-- <div class="form-group col-lg-6 ml-2 mt-2">
+                                                <div class="custom-control custom-switch ">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                        id="customSwitches">
+                                                    <label class="custom-control-label" for="customSwitches">Show in
+                                                        main menu</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-lg-5 mt-2" style="margin-left: 0%;">
+                                                <div class="custom-control custom-switch ">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                        id="customSwitches">
+                                                    <label class="custom-control-label" for="customSwitches">Show in
+                                                        sidebar</label>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <!-- <div class="row ">
+                                    <div class="form-group col-lg-3">
+                                        <label class="hoverable" for="fileInput">
+                                            <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'">
+                                            <div class="hover-text">Upload image</div>
+                                            <div class="background"></div>
+                                        </label>
+                                        <br />
+                                        <input id="fileInput" type='file' (change)="onSelectFile($event)">
+                                 
                                     </div>
 
                                     <div class="form-group col-lg-3 " style="margin-top: 6%;">
@@ -67,7 +124,7 @@
                                         <input type="text" class="form-control " placeholder="Page Keyword">
                                     </div>
 
-                                </div>
+                                </div> -->
 
                                 <div class="NgxEditor__Wrapper form-group mt-3">
                                     <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>

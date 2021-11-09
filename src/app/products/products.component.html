@@ -33,6 +33,117 @@
                             <!-- <p>Modal body text goes here </p> -->
                             <form class="pt-3">
                                 <div class="row ">
+                                    <!-- imgcenter -->
+                                    <div class="ml-0 form-group col-lg-2">
+                                        <label class="hoverable " for="fileInput">
+                                            <img class="img" [src]="url ? url : 'assets/images/faces/panadol.jpg'">
+                                            <div class="hover-text">Upload image</div>
+                                            <div class="background"></div>
+                                        </label>
+                                        <br />
+                                        <input id="fileInput" type='file' (change)="onSelectFile($event)">
+
+
+                                    </div>
+
+                                    <div class="form-group col-lg-8 ml-0" style="margin-left: 16% !important">
+                                        <div class="row">
+                                            <div class="form-group col-lg-6 mt-0">
+                                                <input type="text" class="form-control " placeholder="Category name">
+                                            </div>
+
+                                            <div class="form-group col-lg-6 mt-0">
+                                                <input type="text" class="form-control " placeholder="Product name">
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <input type="name" class="form-control " placeholder="Product tags">
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <input type="text" class="form-control " placeholder="Blog URL">
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <input type="text" class="form-control " placeholder="Product priority">
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <input type="name" class="form-control " placeholder="Page Title">
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <input type="text" class="form-control " placeholder="Page Description">
+                                            </div>
+                                            <div class="form-group col-lg-6">
+                                                <input type="text" class="form-control " placeholder="Page Keyword">
+                                            </div>
+
+                                            <!-- <div class="form-group col-lg-6 ml-2 mt-2">
+                                                <div class="custom-control custom-switch ">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                        id="customSwitches">
+                                                    <label class="custom-control-label" for="customSwitches">Show in
+                                                        main menu</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-lg-5 mt-2" style="margin-left: 0%;">
+                                                <div class="custom-control custom-switch ">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                        id="customSwitches">
+                                                    <label class="custom-control-label" for="customSwitches">Show in
+                                                        sidebar</label>
+                                                </div>
+                                            </div> -->
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-lg-4 ">
+                                        <select class="form-control ">
+                                            <option selected>Best Seller</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        <select class="form-control ">
+                                            <option selected>Top Selling</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-lg-4">
+                                        <select class="form-control ">
+                                            <option selected>New Seller</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-lg-4">
+                                        <input type="text" class="form-control " placeholder="Comments">
+                                    </div>
+                                    <div class="form-group col-lg-4 ml-0 mt-2">
+                                        <div class="custom-control custom-switch ">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitches">
+                                            <label class="custom-control-label" for="customSwitches">Show in
+                                                main menu</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-4 mt-2" style="margin-left: 0%;">
+                                        <div class="custom-control custom-switch ">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitches">
+                                            <label class="custom-control-label" for="customSwitches">Show in
+                                                sidebar</label>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <!-- <div class="row ">
                                     <div class="form-group col-lg-3">
                                         <label class="hoverable" for="fileInput">
                                             <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'">
@@ -43,9 +154,7 @@
 
                                         <br />
                                         <input id="fileInput" type='file' (change)="onSelectFile($event)">
-                                        <!-- <div class="ml-4 badge badge-info badge-pill">Product image</div> -->
-
-                                        <!-- <button *ngIf="url" (click)="delete()">delete</button> -->
+                                     
                                     </div>
                                     <div class="form-group col-lg-3 " style="margin-top: 6%;">
                                         <div class="ml-4 badge badge-info badge-pill">Product image</div>
@@ -60,24 +169,20 @@
                                     <div class="form-group col-lg-6 mt-0">
                                         <div class="row">
                                             <div class="form-group col-lg-6">
-                                                <!-- Default switch -->
                                                 <div class="custom-control custom-switch mt-2">
                                                     <input type="checkbox" class="custom-control-input"
                                                         id="customSwitches">
                                                     <label class="custom-control-label" for="customSwitches">Show in
                                                         main menu</label>
                                                 </div>
-                                                <!-- <input type="text" class="form-control " placeholder="Blog URL"> -->
                                             </div>
                                             <div class="form-group col-lg-6">
-                                                <!-- Default switch -->
                                                 <div class="custom-control custom-switch mt-2">
                                                     <input type="checkbox" class="custom-control-input"
                                                         id="customSwitches">
                                                     <label class="custom-control-label" for="customSwitches">Product out
                                                         of stock</label>
                                                 </div>
-                                                <!-- <input type="text" class="form-control " placeholder="Blog URL"> -->
                                             </div>
                                         </div>
                                     </div>
@@ -123,15 +228,8 @@
                                             <option value="3">Three</option>
                                         </select>
                                     </div>
-                                    <!-- <div class="form-group col-lg-4">
-                                        <select class="form-select " >
-                                            <option selected>Best Seller</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                          </select>
-                                      </div> -->
-                                </div>
+                                   
+                                </div> -->
 
                                 <div class="NgxEditor__Wrapper form-group mt-3">
                                     <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
