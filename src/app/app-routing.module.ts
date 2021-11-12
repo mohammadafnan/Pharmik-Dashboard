@@ -7,10 +7,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { OrdermanagmentComponent } from './ordermanagment/ordermanagment.component';
 import { PagesComponent } from './pages/pages.component';
 import { ProductsComponent } from './products/products.component';
+import { LoginComponent } from './user-pages/login/login.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  // { path: '', redirectTo: '/user-pages/login', pathMatch: 'full' },
+  // { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'category', component: CategoriesComponent },
   { path: 'product', component: ProductsComponent },
