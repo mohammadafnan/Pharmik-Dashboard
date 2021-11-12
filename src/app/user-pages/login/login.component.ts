@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     console.log(data.username);
     // alert("2");
 
-    if (data.username == "admin" && data.password == "123") {
+    if (data.username == "" && data.password == "") {
       alert("Login Successful");
       // alert("3");
 
