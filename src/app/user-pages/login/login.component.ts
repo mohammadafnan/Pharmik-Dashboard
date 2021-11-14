@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {FormBuilder, FormGroup, FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
@@ -9,37 +9,31 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  public formdata:FormGroup;
+  public userdata: FormGroup;
+  username: string = "";
+  password: string = "";
 
-  constructor(private router: Router,  public form: FormBuilder,) { }
+
+  constructor(private router: Router, public fb: FormBuilder,) { }
 
   ngOnInit() {
-    this.formdata = new FormGroup({
-      username: new FormControl("", Validators.compose([
-        Validators.required,
-        Validators.minLength(10)
-      ])),
-      password: new FormControl("", this.passwordvalidation)
+    this.userdata = this.fb.group({
+      username: ["", Validators.required],
+      password: ["", Validators.required]
     })
-
-
   }
-    passwordvalidation(formcontrol) {
-      if (formcontrol.value.length > 8) {
-         return {"passwd" : true};
-      }
 
-   }
-  onClickSubmit(data) {
-    // alert("1");
+  getUsername(e) {
+    this.username = e
+  }
 
-    console.log(data.username);
-    // alert("2");
+  getPassword(e) {
+    this.password = e
+  }
 
-    if (data.username == "" && data.password == "") {
-      alert("Login Successful");
-      // alert("3");
-
+  LogIn() {
+    if (this.username == "admin" && this.password == "admin123") {
+      // alert("Login Successful");
       this.router.navigate(['dashboard'])
     } else {
       alert("Invalid Login");

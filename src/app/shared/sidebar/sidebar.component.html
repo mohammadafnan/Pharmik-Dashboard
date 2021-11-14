@@ -3,7 +3,7 @@
     <li class="nav-item nav-profile">
       <a href="javascript:;" class="nav-link">
         <div class="nav-profile-image">
-          <img src="assets/images/faces/face1.jpg" alt="profile">
+          <img src="assets/images/faces/face1.jpg" alt="profile" />
           <span class="login-status online"></span>
           <!--change to offline or busy as needed-->
         </div>
@@ -14,52 +14,87 @@
         <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
       </a>
     </li>
-    <li class="nav-item" [ngClass]="{ 'active': dashboard.isActive }">
-      <a class="nav-link" routerLink="/dashboard" routerLinkActive #dashboard="routerLinkActive">
+    <li class="nav-item" [ngClass]="{ active: dashboard.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/dashboard"
+        routerLinkActive
+        #dashboard="routerLinkActive"
+      >
         <span class="menu-title">Dashboard</span>
         <i class="mdi mdi-home menu-icon"></i>
       </a>
     </li>
-    <li class="nav-item" [ngClass]="{ 'active': order.isActive }">
-      <a class="nav-link" routerLink="/order" routerLinkActive #order="routerLinkActive">
+    <li class="nav-item" [ngClass]="{ active: order.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/order"
+        routerLinkActive
+        #order="routerLinkActive"
+      >
         <span class="menu-title">Orders </span>
         <i class="mdi mdi-pill menu-icon"></i>
       </a>
     </li>
     <!--Start add pages by afnan -->
-    <li class="nav-item" [ngClass]="{ 'active': category.isActive }">
-      <a class="nav-link" routerLink="/category" routerLinkActive #category="routerLinkActive">
+    <li class="nav-item" [ngClass]="{ active: category.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/category"
+        routerLinkActive
+        #category="routerLinkActive"
+      >
         <span class="menu-title">Categories</span>
         <i class="mdi mdi-view-grid menu-icon"></i>
       </a>
     </li>
-    <li class="nav-item" [ngClass]="{ 'active': product.isActive }">
-      <a class="nav-link" routerLink="/product" routerLinkActive #product="routerLinkActive">
+    <li class="nav-item" [ngClass]="{ active: product.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/product"
+        routerLinkActive
+        #product="routerLinkActive"
+      >
         <span class="menu-title">Products</span>
         <i class="mdi mdi-shopping menu-icon"></i>
       </a>
     </li>
-    <li class="nav-item" [ngClass]="{ 'active': blog.isActive }">
-      <a class="nav-link" routerLink="/blog" routerLinkActive #blog="routerLinkActive">
+    <li class="nav-item" [ngClass]="{ active: blog.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/blog"
+        routerLinkActive
+        #blog="routerLinkActive"
+      >
         <span class="menu-title">Blog</span>
         <i class="mdi mdi-blogger menu-icon"></i>
       </a>
     </li>
-    <li class="nav-item" [ngClass]="{ 'active': page.isActive }">
-      <a class="nav-link" routerLink="/page" routerLinkActive #page="routerLinkActive">
+    <li class="nav-item" [ngClass]="{ active: page.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/page"
+        routerLinkActive
+        #page="routerLinkActive"
+      >
         <span class="menu-title">Pages</span>
         <i class="mdi mdi-book-open menu-icon"></i>
       </a>
     </li>
-    <li class="nav-item" [ngClass]="{ 'active': banner.isActive }">
-      <a class="nav-link" routerLink="/banner" routerLinkActive #banner="routerLinkActive">
+    <li class="nav-item" [ngClass]="{ active: banner.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/banner"
+        routerLinkActive
+        #banner="routerLinkActive"
+      >
         <span class="menu-title">Banner</span>
         <i class="mdi mdi-image menu-icon"></i>
       </a>
     </li>
-   
-    <!--End add pages by afnan -->
 
+    <!--End add pages by afnan -->
+    <!-- 
     <li class="nav-item" [ngClass]="{ 'active': forms.isActive }">
       <a class="nav-link" routerLink="forms/basic-elements" routerLinkActive #forms="routerLinkActive">
         <span class="menu-title">Form elements</span>
@@ -144,6 +179,6 @@
               #tooltips="routerLinkActive">Tooltips</a></li>
         </ul>
       </div>
-    </li>
+    </li> -->
   </ul>
 </nav>

@@ -11,9 +11,7 @@ import { LoginComponent } from './user-pages/login/login.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  // { path: '', redirectTo: '/user-pages/login', pathMatch: 'full' },
-  // { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: 'user-pages/login', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'category', component: CategoriesComponent },
   { path: 'product', component: ProductsComponent },
@@ -28,7 +26,10 @@ const routes: Routes = [
   { path: 'icons', loadChildren: () => import('./icons/icons.module').then(m => m.IconsModule) },
   { path: 'general-pages', loadChildren: () => import('./general-pages/general-pages.module').then(m => m.GeneralPagesModule) },
   { path: 'apps', loadChildren: () => import('./apps/apps.module').then(m => m.AppsModule) },
-  { path: 'user-pages', loadChildren: () => import('./user-pages/user-pages.module').then(m => m.UserPagesModule) },
+  {
+    path: 'user-pages/login',
+    component: LoginComponent
+  },
   { path: 'error-pages', loadChildren: () => import('./error-pages/error-pages.module').then(m => m.ErrorPagesModule) },
 ];
 
