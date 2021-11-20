@@ -1,0 +1,336 @@
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div>
+            <div class="card-body cardheader">
+
+                <div class="page-header">
+                    <h3 class="page-title">
+                        <span class="page-title-icon bg-info text-white mr-2">
+                            <i class="mdi mdi-book-open"></i>
+                        </span>
+                        FAQs
+                    </h3>
+                    <div class="text-right">
+                        <button type="button" class="btn btn-info btn-sm btn-rounded"
+                            (click)="openModal(exampleModalContent)">
+                            <i class="mdi mdi-plus mr-1"></i>Add Faqs</button>
+                    </div>
+                </div>
+                <!-- 
+                <div class="text-right">
+                    <button type="button" class="btn btn-info btn-sm btn-rounded"
+                        (click)="openModal(exampleModalContent)">
+                        <i class="mdi mdi-plus mr-1"></i>Add Blog</button>
+                </div> -->
+                <ng-template class="modal fade" #exampleModalContent let-modal>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title" id="exampleModalLabel">Edit Faqs</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                (click)="modal.dismiss()">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- <p>Modal body text goes here </p> -->
+                            <form class="pt-3">
+                                <div class="row ">
+                                    <!-- <div class="form-group col-lg-3">
+                                        <label class="hoverable" for="fileInput">
+                                            <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'">
+                                            <div class="hover-text">Upload image</div>
+                                            <div class="background"></div>
+                                        </label>
+                                        <br />
+                                        <input id="fileInput" type='file' (change)="onSelectFile($event)">
+                                    </div> -->
+
+                                    <!-- <div class="ml-4 badge badge-info badge-pill">Category image</div> -->
+
+                                    <!-- <button *ngIf="url" (click)="delete()">delete</button> -->
+
+                                    <!-- <div class="form-group col-lg-3 " style="margin-top: 6%;">
+                                        <div class="ml-4 badge badge-info badge-pill">Page image</div>
+                                    </div> -->
+                                    <div class="form-group col-lg-12 ">
+                                        <input type="text" class="form-control " placeholder="Question ">
+                                    </div>
+
+
+
+                                    <div class="form-group col-lg-12">
+                                        <textarea type="name" class="form-control " placeholder="Answer"></textarea>
+                                    </div>
+
+
+                                </div>
+
+
+
+                            </form>
+                            <!-- <div class="NgxEditor__Wrapper form-group mt-3">
+                                <ngx-editor-menu [editor]="editor1"> </ngx-editor-menu>
+                                <ngx-editor [editor]="editor1" [ngModel]="html" [disabled]="false"
+                                    [placeholder]="'Type Question here...'"></ngx-editor>
+                            </div>
+
+
+                            <div class="NgxEditor__Wrapper form-group mt-3">
+                                <ngx-editor-menu [editor]="editor2"> </ngx-editor-menu>
+                                <ngx-editor [editor]="editor2" [ngModel]="html" [disabled]="false"
+                                    [placeholder]="'Type Answer here...'"></ngx-editor>
+                            </div> -->
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal"
+                                (click)="modal.close()">Cancel</button>
+                            <button type="button" class="btn btn-info btn-rounded" (click)="modal.close()">Save</button>
+                        </div>
+                    </div>
+                </ng-template>
+                <!-- Modal Ends -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <!-- <h4 class="card-title">Pages</h4> -->
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="line_height">
+                                    Question </th>
+                                <th>
+                                    Answer </th>
+                                <!-- <th>
+                                    Description </th>
+                                <th>
+                                    Keyword </th>
+                                <th>
+                                    Action
+                                </th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <!-- <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image"> -->
+                                    Is it safe to purchase medications online?
+                                </td>
+                                <td class="line_height">
+                                    Yes. We provide medications, both branded and generic, from the world's biggest
+                                    pharmaceutical companies and wholesalers.
+
+                                    Your privacy and security are important to us and will not be compromised.
+                                    fastukmeds.com utilizes industry-standard security measures to make the order
+                                    process and the transaction. </td>
+                                <!-- <td class="line_height">
+                                    A UK online Pharmacy store you can buy online medicine
+                                </td>
+
+                                <td class="line_height">
+                                    A UK online Pharmacy store you can buy online medicine
+
+                                </td> -->
+
+                                <td>
+                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
+                                        <i class="mdi mdi-pencil" (click)="openModal(exampleModalContent)"></i>
+                                    </button>
+                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i> -->
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <!-- <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image"> -->
+                                    Is it safe to purchase medications online?
+                                </td>
+                                <td class="line_height">
+                                    Yes. We provide medications, both branded and generic, from the world's biggest
+                                    pharmaceutical companies and wholesalers.
+
+                                    Your privacy and security are important to us and will not be compromised.
+                                    fastukmeds.com utilizes industry-standard security measures to make the order
+                                    process and the transaction. </td>
+                                <td>
+                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
+                                        <i class="mdi mdi-pencil"></i>
+                                    </button>
+                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i> -->
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <!-- <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image"> -->
+                                    Is it safe to purchase medications online?
+                                </td>
+                                <td class="line_height">
+                                    Yes. We provide medications, both branded and generic, from the world's biggest
+                                    pharmaceutical companies and wholesalers.
+
+                                    Your privacy and security are important to us and will not be compromised.
+                                    fastukmeds.com utilizes industry-standard security measures to make the order
+                                    process and the transaction. </td>
+
+                                <td>
+                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
+                                        <i class="mdi mdi-pencil"></i>
+                                    </button>
+                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i> -->
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <!-- <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image"> -->
+                                    Is it safe to purchase medications online?
+                                </td>
+                                <td class="line_height">
+                                    Yes. We provide medications, both branded and generic, from the world's biggest
+                                    pharmaceutical companies and wholesalers.
+
+                                    Your privacy and security are important to us and will not be compromised.
+                                    fastukmeds.com utilizes industry-standard security measures to make the order
+                                    process and the transaction. </td>
+                                <td>
+                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
+                                        <i class="mdi mdi-pencil"></i>
+                                    </button>
+                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i> -->
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <!-- <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image"> -->
+                                    Is it safe to purchase medications online?
+                                </td>
+                                <td class="line_height">
+                                    Yes. We provide medications, both branded and generic, from the world's biggest
+                                    pharmaceutical companies and wholesalers.
+
+                                    Your privacy and security are important to us and will not be compromised.
+                                    fastukmeds.com utilizes industry-standard security measures to make the order
+                                    process and the transaction. </td>
+
+                                <td>
+                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
+                                        <i class="mdi mdi-pencil"></i>
+                                    </button>
+                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i> -->
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <!-- <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image"> -->
+                                    Is it safe to purchase medications online?
+                                </td>
+                                <td class="line_height">
+                                    Yes. We provide medications, both branded and generic, from the world's biggest
+                                    pharmaceutical companies and wholesalers.
+
+                                    Your privacy and security are important to us and will not be compromised.
+                                    fastukmeds.com utilizes industry-standard security measures to make the order
+                                    process and the transaction. </td>
+
+                                <td>
+                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
+                                        <i class="mdi mdi-pencil"></i>
+                                    </button>
+                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i> -->
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <!-- <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image"> -->
+                                    Is it safe to purchase medications online?
+                                </td>
+                                <td class="line_height">
+                                    Yes. We provide medications, both branded and generic, from the world's biggest
+                                    pharmaceutical companies and wholesalers.
+
+                                    Your privacy and security are important to us and will not be compromised.
+                                    fastukmeds.com utilizes industry-standard security measures to make the order
+                                    process and the transaction. </td>
+
+                                <td>
+                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
+                                        <i class="mdi mdi-pencil"></i>
+                                    </button>
+                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i> -->
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <!-- <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image"> -->
+                                    Is it safe to purchase medications online?
+                                </td>
+                                <td class="line_height">
+                                    Yes. We provide medications, both branded and generic, from the world's biggest
+                                    pharmaceutical companies and wholesalers.
+
+                                    Your privacy and security are important to us and will not be compromised.
+                                    fastukmeds.com utilizes industry-standard security measures to make the order
+                                    process and the transaction. </td>
+
+                                <td>
+                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
+                                        <i class="mdi mdi-pencil"></i>
+                                    </button>
+                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i> -->
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <!-- <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image"> -->
+                                    Is it safe to purchase medications online?
+                                </td>
+                                <td class="line_height">
+                                    Yes. We provide medications, both branded and generic, from the world's biggest
+                                    pharmaceutical companies and wholesalers.
+
+                                    Your privacy and security are important to us and will not be compromised.
+                                    fastukmeds.com utilizes industry-standard security measures to make the order
+                                    process and the transaction. </td>
+
+                                <td>
+                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
+                                        <i class="mdi mdi-pencil"></i>
+                                    </button>
+                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i> -->
+
+                                </td>
+                            </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

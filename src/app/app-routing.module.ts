@@ -4,6 +4,7 @@ import { BannerComponent } from './banner/banner.component';
 import { BlogComponent } from './blog/blog.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FaqsComponent } from './faqs/faqs.component';
 import { OrdermanagmentComponent } from './ordermanagment/ordermanagment.component';
 import { PagesComponent } from './pages/pages.component';
 import { ProductsComponent } from './products/products.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'page', component: PagesComponent },
   { path: 'banner', component: BannerComponent },
   { path: 'order', component: OrdermanagmentComponent },
+  { path: 'faqs', component: FaqsComponent },
   { path: 'basic-ui', loadChildren: () => import('./basic-ui/basic-ui.module').then(m => m.BasicUiModule) },
   { path: 'charts', loadChildren: () => import('./charts/charts.module').then(m => m.ChartsDemoModule) },
   { path: 'forms', loadChildren: () => import('./forms/form.module').then(m => m.FormModule) },

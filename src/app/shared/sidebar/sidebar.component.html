@@ -45,9 +45,16 @@
         <i class="mdi mdi-blogger menu-icon"></i>
       </a>
     </li>
+    
     <li class="nav-item" [ngClass]="{ 'active': page.isActive }">
       <a class="nav-link" routerLink="/page" routerLinkActive #page="routerLinkActive">
         <span class="menu-title">Pages</span>
+        <i class="mdi mdi-book-open menu-icon"></i>
+      </a>
+    </li>
+    <li class="nav-item" [ngClass]="{ 'active': faqs.isActive }">
+      <a class="nav-link" routerLink="/faqs" routerLinkActive #faqs="routerLinkActive">
+        <span class="menu-title">FAQs</span>
         <i class="mdi mdi-book-open menu-icon"></i>
       </a>
     </li>
