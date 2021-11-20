@@ -45,7 +45,7 @@
         <i class="mdi mdi-blogger menu-icon"></i>
       </a>
     </li>
-    
+
     <li class="nav-item" [ngClass]="{ 'active': page.isActive }">
       <a class="nav-link" routerLink="/page" routerLinkActive #page="routerLinkActive">
         <span class="menu-title">Pages</span>
@@ -55,7 +55,7 @@
     <li class="nav-item" [ngClass]="{ 'active': faqs.isActive }">
       <a class="nav-link" routerLink="/faqs" routerLinkActive #faqs="routerLinkActive">
         <span class="menu-title">FAQs</span>
-        <i class="mdi mdi-book-open menu-icon"></i>
+        <i class=" mdi mdi-information menu-icon"></i>
       </a>
     </li>
     <li class="nav-item" [ngClass]="{ 'active': banner.isActive }">
@@ -64,7 +64,7 @@
         <i class="mdi mdi-image menu-icon"></i>
       </a>
     </li>
-   
+
     <!--End add pages by afnan -->
 
     <li class="nav-item" [ngClass]="{ 'active': forms.isActive }">
@@ -114,7 +114,7 @@
         </ul>
       </div>
     </li>
-    
+
     <li class="nav-item"
       [ngClass]="{'active' : accordions.isActive || buttons.isActive || badges.isActive || breadcrumbs.isActive || dropdowns.isActive || modals.isActive || notifications.isActive || progressbar.isActive || pagination.isActive || tabs.isActive || typography.isActive || tooltips.isActive }">
       <a class="nav-link" (click)="uiBasicCollapsed = !uiBasicCollapsed" [attr.aria-expanded]="uiBasicCollapsed"

@@ -4,6 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProductService {
-
+  // http://localhost:3001/api/products
   constructor() { }
 }
