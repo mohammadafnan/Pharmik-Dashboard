@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Editor } from 'ngx-editor';
+import { FAQ } from '../Models/FAQ/FAQ-Model';
+import { FaqsService } from '../Services/faqs/faqs.service';
 
 @Component({
   selector: 'app-faqs',
@@ -10,10 +12,12 @@ import { Editor } from 'ngx-editor';
 export class FaqsComponent implements OnInit {
   editor1: Editor;
   editor2: Editor;
+  newFAQ: FAQ = {};
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, public _FAQsService: FaqsService) { }
 
   ngOnInit(): void {
+    this._FAQsService.getAllFAQs();
     this.editor1 = new Editor();
     this.editor2 = new Editor();
 
@@ -44,5 +48,15 @@ export class FaqsComponent implements OnInit {
   }
   public delete() {
     this.url = '';
+  }
+
+  onSaveFAQ(faq?) {
+    if (faq == undefined || faq == null) {
+      console.log(this.newFAQ)
+      this._FAQsService.postFAQ(this.newFAQ);
+    }
+    else {
+      // this._FAQsService
+    }
   }
 }

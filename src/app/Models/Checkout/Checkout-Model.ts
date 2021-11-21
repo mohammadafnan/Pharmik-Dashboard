@@ -13,4 +13,10 @@ export class Checkout {
     country?: string;
     regionOrState?: string;
     orderNotes?: string;
+    orderDate?: string;
+    expectedDelivery?: string;
+    orderTime?: string;
+    orderStatus?: string;
+    paymentType?: string;
+    creditCardType?: string;
 }

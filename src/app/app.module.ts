@@ -5,7 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChartsModule, ThemeService } from 'ng2-charts';
-import { FormGroup, FormControl, Validators  } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -44,7 +46,7 @@ import { FaqsComponent } from './faqs/faqs.component';
     BannerComponent,
     OrdermanagmentComponent,
     FaqsComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -55,8 +57,9 @@ import { FaqsComponent } from './faqs/faqs.component';
     ReactiveFormsModule,
     ChartsModule,
     NgxEditorModule,
+    HttpClientModule
   ],
-  providers: [ThemeService],
+  providers: [ThemeService, HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

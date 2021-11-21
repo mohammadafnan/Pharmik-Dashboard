@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd, NavigationStart, RouteConfigLoadStart, RouteConfigLoadEnd } from '@angular/router';
+import { CheckoutService } from './Services/Checkout/checkout.service';
+import { FaqsService } from './Services/faqs/faqs.service';
+import { ProductService } from './Services/product/product.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +17,7 @@ export class AppComponent implements OnInit {
   showFooter: boolean = false;
   isLoading: boolean;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public _FAQsService: FaqsService, public _ProductService: ProductService, public _CheckoutService: CheckoutService) {
 
     // Removing Sidebar, Navbar, Footer for Documentation, Error and Auth pages
     router.events.forEach((event) => {
@@ -53,8 +56,27 @@ export class AppComponent implements OnInit {
   }
 
 
-
   ngOnInit() {
+
+    this._ProductService.LoadAllProducts();
+    setTimeout(() => {
+      console.log(this._ProductService.allProductsData)
+    }, 3000);
+
+
+    this._FAQsService.getAllFAQs();
+    setTimeout(() => {
+      console.log(this._FAQsService.allFAQsData)
+    }, 3000);
+
+
+    this._CheckoutService.getAllCheckouts();
+    setTimeout(() => {
+      console.log("Checkout API Calling")
+      console.log(this._CheckoutService.allCheckoutsData)
+    }, 3000);
+
+
     // Scroll to top after route change
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {

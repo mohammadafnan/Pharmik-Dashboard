@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Editor } from 'ngx-editor';
+import { Product } from '../Models/Product/Product-Model';
+import { ProductService } from '../Services/product/product.service';
 
 @Component({
   selector: 'app-products',
@@ -10,9 +12,13 @@ import { Editor } from 'ngx-editor';
 export class ProductsComponent implements OnInit {
   editor: Editor;
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, public _ProductService: ProductService) { }
 
   ngOnInit(): void {
+    this._ProductService.LoadAllProducts();
+    setTimeout(() => {
+      console.log(this._ProductService.allProductsData)
+    }, 3000);
     this.editor = new Editor();
 
   }
@@ -21,12 +27,12 @@ export class ProductsComponent implements OnInit {
     this.editor.destroy();
   }
 
-  openModal( exampleModalContent ) {
-    this.modalService.open( exampleModalContent, { size : 'lg' } );
+  openModal(exampleModalContent) {
+    this.modalService.open(exampleModalContent, { size: 'lg' });
   }
 
   name = 'Angular 4';
-  url :any;
+  url: any;
   onSelectFile(event) {
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
@@ -38,7 +44,7 @@ export class ProductsComponent implements OnInit {
       }
     }
   }
-  public delete(){
+  public delete() {
     this.url = '';
   }
 
