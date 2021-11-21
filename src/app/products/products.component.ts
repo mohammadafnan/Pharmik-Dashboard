@@ -27,8 +27,12 @@ export class ProductsComponent implements OnInit {
     this.editor.destroy();
   }
 
-  openModal(exampleModalContent) {
-    this.modalService.open(exampleModalContent, { size: 'lg' });
+  openModalforadd_product (Addproductmodal) {
+    this.modalService.open(Addproductmodal, { size: 'lg' });
+  }
+
+  openModalforadd_type (Addtypemodal) {
+    this.modalService.open(Addtypemodal, { size: 'lg' });
   }
 
   name = 'Angular 4';
