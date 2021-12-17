@@ -22,7 +22,6 @@ export class CheckoutService {
       (err) => {
         console.log(err)
       }, () => {
-        this.LoadAllCheckouts()
       }
     )
   }

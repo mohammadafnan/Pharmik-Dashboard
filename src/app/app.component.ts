@@ -59,23 +59,15 @@ export class AppComponent implements OnInit {
   ngOnInit() {
 
     this._ProductService.LoadAllProducts();
+    this._CheckoutService.LoadAllCheckouts();
+    this._FAQsService.LoadAllFAQs();
+
     setTimeout(() => {
       console.log(this._ProductService.allProductsData)
-    }, 3000);
-
-
-    this._FAQsService.getAllFAQs();
-    setTimeout(() => {
       console.log(this._FAQsService.allFAQsData)
-    }, 3000);
-
-
-    this._CheckoutService.getAllCheckouts();
-    setTimeout(() => {
       console.log("Checkout API Calling")
       console.log(this._CheckoutService.allCheckoutsData)
     }, 3000);
-
 
     // Scroll to top after route change
     this.router.events.subscribe((evt) => {

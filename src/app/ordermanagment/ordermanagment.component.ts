@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Editor } from 'ngx-editor';
+import { CheckoutService } from '../Services/Checkout/checkout.service';
 
 @Component({
   selector: 'app-ordermanagment',
@@ -10,10 +11,11 @@ import { Editor } from 'ngx-editor';
 export class OrdermanagmentComponent implements OnInit {
   editor: Editor;
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, public _CheckoutService: CheckoutService) { }
 
   ngOnInit(): void {
     this.editor = new Editor();
+    this._CheckoutService.getAllCheckouts();
 
   }
   // make sure to destory the editor
@@ -21,12 +23,12 @@ export class OrdermanagmentComponent implements OnInit {
     this.editor.destroy();
   }
 
-  openModal( exampleModalContent ) {
-    this.modalService.open( exampleModalContent, { size : 'lg' } );
+  openModal(exampleModalContent) {
+    this.modalService.open(exampleModalContent, { size: 'lg' });
   }
 
   name = 'Angular 4';
-  url :any;
+  url: any;
   onSelectFile(event) {
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
@@ -38,7 +40,7 @@ export class OrdermanagmentComponent implements OnInit {
       }
     }
   }
-  public delete(){
+  public delete() {
     this.url = '';
   }
 
