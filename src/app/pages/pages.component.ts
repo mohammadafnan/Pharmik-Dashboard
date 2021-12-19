@@ -9,7 +9,7 @@ import { Editor } from 'ngx-editor';
 })
 export class PagesComponent implements OnInit {
   editor: Editor;
-
+ 
   constructor(private modalService: NgbModal) { }
   ngOnInit(): void {
     this.editor = new Editor();
