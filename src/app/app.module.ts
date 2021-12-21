@@ -27,6 +27,7 @@ import { PagesComponent } from './pages/pages.component';
 import { BannerComponent } from './banner/banner.component';
 import { OrdermanagmentComponent } from './ordermanagment/ordermanagment.component';
 import { FaqsComponent } from './faqs/faqs.component';
+import { CouponComponent } from './coupon/coupon.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { FaqsComponent } from './faqs/faqs.component';
     BannerComponent,
     OrdermanagmentComponent,
     FaqsComponent,
+    CouponComponent,
 
   ],
   imports: [
