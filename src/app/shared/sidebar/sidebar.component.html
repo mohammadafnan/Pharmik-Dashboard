@@ -3,7 +3,9 @@
     <li class="nav-item nav-profile">
       <a href="javascript:;" class="nav-link">
         <div class="nav-profile-image">
-          <img src="assets/images/faces/face1.jpg" alt="profile" />
+          <i class="mdi mdi-account-circle " style="font-size: 40px ;color:#198ae3;
+          "></i>
+          <!-- <img src="assets/images/faces/face1.jpg" alt="profile" /> -->
           <span class="login-status online"></span>
           <!--change to offline or busy as needed-->
         </div>
@@ -104,7 +106,20 @@
         <i class="mdi mdi-image menu-icon"></i>
       </a>
     </li>
+    <li class="nav-item" [ngClass]="{ active: coupon.isActive }">
+      <a
+        class="nav-link"
+        routerLink="/coupon"
+        routerLinkActive
+        #coupon="routerLinkActive"
+      >
+        <span class="menu-title">Coupon</span>
+        <i class="mdi  mdi-percent menu-icon"></i>
+      </a>
+    </li>
+    <!--End add pages by afnan -->
 
+    <!--End add pages by afnan -->
     <!-- 
     <li class="nav-item" [ngClass]="{ 'active': forms.isActive }">
       <a class="nav-link" routerLink="forms/basic-elements" routerLinkActive #forms="routerLinkActive">

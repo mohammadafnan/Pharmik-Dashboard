@@ -1,0 +1,141 @@
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div>
+            <div class="card-body cardheader">
+
+                <div class="page-header">
+                    <h3 class="page-title">
+                        <span class="page-title-icon bg-info text-white mr-2">
+                            <i class="mdi mdi-percent"></i>
+                        </span>
+                        Coupon
+                    </h3>
+                    <div class="text-right">
+                        <button type="button" class="btn btn-info btn-sm btn-rounded"
+                            (click)="openModal(exampleModalContent)">
+                            <i class="mdi mdi-plus mr-1"></i>Add Coupon</button>
+                    </div>
+                </div>
+                <!-- 
+                <div class="text-right">
+                    <button type="button" class="btn btn-info btn-sm btn-rounded"
+                        (click)="openModal(exampleModalContent)">
+                        <i class="mdi mdi-plus mr-1"></i>Add Blog</button>
+                </div> -->
+                <ng-template class="modal fade" #exampleModalContent let-modal>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title" id="exampleModalLabel">Add Coupon</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                (click)="modal.dismiss()">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- <p>Modal body text goes here </p> -->
+                            <div class="pt-3">
+                                <div class="row">
+                                    <!-- <div class="form-group col-lg-3">
+                                        <label class="hoverable" for="fileInput">
+                                            <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'">
+                                            <div class="hover-text">Upload image</div>
+                                            <div class="background"></div>
+                                        </label>
+                                        <br />
+                                        <input id="fileInput" type='file' (change)="onSelectFile($event)">
+                                    </div> -->
+
+                                    <!-- <div class="ml-4 badge badge-info badge-pill">Category image</div> -->
+
+                                    <!-- <button *ngIf="url" (click)="delete()">delete</button> -->
+
+                                    <!-- <div class="form-group col-lg-3 " style="margin-top: 6%;">
+                                        <div class="ml-4 badge badge-info badge-pill">Page image</div>
+                                    </div> -->
+                                    <div class="form-group col-lg-2">
+                                        <div class="custom-control custom-switch mt-2 ml-4">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitches"
+                                                name="test2" />
+                                            <label class="custom-control-label" for="customSwitches">
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-lg-3">
+                                        <input type="text" class="form-control" placeholder="Enter Coupon Code" />
+
+                                    </div>
+                                    <div class="form-group col-lg-3">
+                                        <input type="text" class="form-control" placeholder="Enter Validity" />
+
+                                    </div>
+                                    <div class="form-group col-lg-3">
+                                        <input type="text" class="form-control" placeholder="Enter no of avail" />
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="NgxEditor__Wrapper form-group mt-3">
+                                <ngx-editor-menu [editor]="editor1"> </ngx-editor-menu>
+                                <ngx-editor [editor]="editor1" [ngModel]="html" [disabled]="false"
+                                    [placeholder]="'Type Question here...'"></ngx-editor>
+                            </div>
+
+
+                            <div class="NgxEditor__Wrapper form-group mt-3">
+                                <ngx-editor-menu [editor]="editor2"> </ngx-editor-menu>
+                                <ngx-editor [editor]="editor2" [ngModel]="html" [disabled]="false"
+                                    [placeholder]="'Type Answer here...'"></ngx-editor>
+                            </div> -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal"
+                                (click)="modal.close()">
+                                Cancel
+                            </button>
+                            <button type="button" class="btn btn-info btn-rounded">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </ng-template>
+                <!-- Modal Ends -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <!-- <h4 class="card-title">Pages</h4> -->
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="line_height">Coupon Code</th>
+                                <th>Validity</th>
+                                <th>No of Avail</th>
+                                <th>View</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>56789</td>
+                                <td>12/22/2021</td>
+                                <td>5</td>
+                                <td>
+                                    <button type="button" class="btn btn-info btn-rounded btn-icon">
+                                        <i class="mdi mdi-eye" (click)="openModal(exampleModalContent)"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

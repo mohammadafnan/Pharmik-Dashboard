@@ -99,7 +99,7 @@
 .NgxEditor__Wrapper .NgxEditor__MenuBar {
     border-top-left-radius : 20px !important;
     border-top-right-radius: 20px !important;
-    overflow-x :scroll !important;
+    // overflow-x:auto !important;
 
     // border-bottom: 1px solid #3a9dee !important;
 }
@@ -212,3 +212,27 @@ table {
 // .modal-footer {
 //     padding: -20px !important;
 // }
+
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(235, 235, 235); 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #198ae3; 
+    border-radius: 10px;
+    cursor: pointer;
+
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #198ae3; 
+  }

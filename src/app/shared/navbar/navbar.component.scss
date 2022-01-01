@@ -249,8 +249,9 @@
             @extend .d-flex;
             .nav-profile-img {
               position: relative;
-              width: 32px;
-              height: 32px;
+              // width: 32px;
+              // height: 32px;
+              transform: translate(10px, 0px);
               img {
                 width: 32px;
                 height: 32px;

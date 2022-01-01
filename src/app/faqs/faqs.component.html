@@ -1,25 +1,27 @@
 <div class="row">
-  <div class="col-12 grid-margin">
-    <div>
-      <div class="card-body cardheader">
-        <div class="page-header">
-          <h3 class="page-title">
-            <span class="page-title-icon bg-info text-white mr-2">
-              <i class="mdi mdi-book-open"></i>
-            </span>
-            FAQs
-          </h3>
-          <div class="text-right">
-            <button
-              type="button"
-              class="btn btn-info btn-sm btn-rounded"
-              (click)="openModal(exampleModalContent)"
-            >
-              <i class="mdi mdi-plus mr-1"></i>Add Faqs
-            </button>
-          </div>
-        </div>
+    <div class="col-12 grid-margin">
+        <div>
+            <div class="card-body cardheader">
 
+                <div class="page-header">
+                    <h3 class="page-title">
+                        <span class="page-title-icon bg-info text-white mr-2">
+                            <i class="mdi mdi-information"></i>
+                        </span>
+                        FAQs
+                    </h3>
+                    <div class="text-right">
+                        <button type="button" class="btn btn-info btn-sm btn-rounded"
+                            (click)="openModal(exampleModalContent)">
+                            <i class="mdi mdi-plus mr-1"></i>Add Faqs</button>
+                    </div>
+                </div>
+                <!-- 
+                <div class="text-right">
+                    <button type="button" class="btn btn-info btn-sm btn-rounded"
+                        (click)="openModal(exampleModalContent)">
+                        <i class="mdi mdi-plus mr-1"></i>Add Blog</button>
+                </div> -->
         <ng-template class="modal fade" #exampleModalContent let-modal>
           <div class="modal-content">
             <div class="modal-header">
@@ -49,7 +51,7 @@
                   <div class="form-group col-lg-12">
                     <textarea
                       type="name"
-                      class="form-control"
+                      class="form-control resizable"
                       placeholder="Answer"
                       [(ngModel)]="this.newFAQ.answer"
                     ></textarea>
@@ -93,7 +95,7 @@
               <tr>
                 <th class="line_height">Question</th>
                 <th>Answer</th>
-                <th>Edit</th>
+                <th>View</th>
               </tr>
             </thead>
             <tbody>
@@ -106,7 +108,7 @@
                     class="btn btn-info btn-rounded btn-icon"
                   >
                     <i
-                      class="mdi mdi-pencil"
+                      class="mdi mdi-eye"
                       (click)="openModal(exampleModalContent)"
                     ></i>
                   </button>

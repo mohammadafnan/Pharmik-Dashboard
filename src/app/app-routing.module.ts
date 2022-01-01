@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BannerComponent } from './banner/banner.component';
 import { BlogComponent } from './blog/blog.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { CouponComponent } from './coupon/coupon.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FaqsComponent } from './faqs/faqs.component';
 import { OrdermanagmentComponent } from './ordermanagment/ordermanagment.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'banner', component: BannerComponent },
   { path: 'order', component: OrdermanagmentComponent },
   { path: 'faqs', component: FaqsComponent },
+  { path: 'coupon', component: CouponComponent },
   { path: 'basic-ui', loadChildren: () => import('./basic-ui/basic-ui.module').then(m => m.BasicUiModule) },
   { path: 'charts', loadChildren: () => import('./charts/charts.module').then(m => m.ChartsDemoModule) },
   { path: 'forms', loadChildren: () => import('./forms/form.module').then(m => m.FormModule) },
