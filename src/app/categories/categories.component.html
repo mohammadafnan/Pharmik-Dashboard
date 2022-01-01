@@ -1,387 +1,237 @@
 <div class="row">
-    <div class="col-12 grid-margin">
-        <div>
-            <div class="card-body cardheader">
-                <div class="page-header">
-                    <h3 class="page-title">
-                        <span class="page-title-icon bg-info text-white mr-2">
-                            <i class="mdi mdi-view-grid"></i>
-                        </span>
-                        Categories
-                    </h3>
-                    <div class="text-right">
-                        <button type="button" class="btn btn-info btn-sm btn-rounded"
-                            (click)="openModal(exampleModalContent)">
-                            <i class="mdi mdi-plus mr-1"></i>Add Category</button>
-                    </div>
-                </div>
-
-                <!-- <nav aria-label="breadcrumb">
-                        <ul class="breadcrumb">
-                            <li class="breadcrumb-item active" aria-current="page">
-                                <span></span>Overview
-                                <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
-                            </li>
-                        </ul>
-                    </nav> -->
-                <!-- <div class="text-right">
-                    <button type="button" class="btn btn-info btn-sm btn-rounded"
-                        (click)="openModal(exampleModalContent)">
-                        <i class="mdi mdi-plus mr-1"></i>Add Category</button>
-                </div> -->
-                <!-- Modal Starts -->
-
-                <ng-template class="modal fade" #exampleModalContent let-modal>
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3 class="modal-title" id="exampleModalLabel">Add Category</h3>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                                (click)="modal.dismiss()">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <!-- <p>Modal body text goes here </p> -->
-                            <form class="pt-3">
-                                <div class="row ">
-                                    <!-- imgcenter -->
-                                    <div class="ml-0 form-group col-lg-2">
-                                        <label class="hoverable " for="fileInput">
-                                            <img class="img" [src]="url ? url : 'assets/images/faces/panadol.jpg'">
-                                            <div class="hover-text">Upload image</div>
-                                            <div class="background"></div>
-                                        </label>
-                                        <br />
-                                        <input id="fileInput" type='file' (change)="onSelectFile($event)">
-                                        <!-- <div class="ml-4 badge badge-info badge-pill">Category image</div> -->
-
-                                        <!-- <button *ngIf="url" (click)="delete()">delete</button> -->
-
-                                    </div>
-
-                                    <div class="form-group col-lg-8 ml-0" style="margin-left: 15% !important">
-                                        <div class="row">
-                                            <div class="form-group col-lg-6 mt-0">
-                                                <input type="text" class="form-control " placeholder="Category name">
-                                            </div>
-
-                                            <div class="form-group col-lg-6 mt-0">
-                                                <input type="text" class="form-control " placeholder="Blog URL">
-                                            </div>
-                                            <div class="form-group col-lg-6">
-                                                <input type="name" class="form-control " placeholder="Page Title">
-                                            </div>
-                                            <div class="form-group col-lg-6">
-                                                <input type="text" class="form-control " placeholder="Page Description">
-                                            </div>
-                                            <div class="form-group col-lg-6">
-                                                <input type="text" class="form-control " placeholder="Page Keyword">
-                                            </div>
-                                            <div class="form-group col-lg-6">
-                                                <input type="text" class="form-control " placeholder="comments">
-                                            </div>
-                                            <div class="form-group col-lg-6 ml-2 mt-2">
-                                                <div class="custom-control custom-switch ">
-                                                    <input type="checkbox" class="custom-control-input"
-                                                        id="customSwitches">
-                                                    <label class="custom-control-label" for="customSwitches">Show in
-                                                        main menu</label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-5 mt-2" style="margin-left: 0%;">
-                                                <div class="custom-control custom-switch ">
-                                                    <input type="checkbox" class="custom-control-input"
-                                                        id="customSwitches">
-                                                    <label class="custom-control-label" for="customSwitches">Show in
-                                                        sidebar</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- <div class="row pl-3 pr-3">
-
-                                        <div class="form-group col-lg-4 mt-0">
-                                            <input type="text" class="form-control " placeholder="Category name">
-                                        </div>
-
-                                        <div class="form-group col-lg-4 mt-0">
-                                            <input type="text" class="form-control " placeholder="Blog URL">
-                                        </div>
-
-                                        <div class="form-group col-lg-4">
-                                            <input type="name" class="form-control " placeholder="Page Title">
-                                        </div>
-                                        <div class="form-group col-lg-4">
-                                            <input type="text" class="form-control " placeholder="Page Description">
-                                        </div>
-                                        <div class="form-group col-lg-4">
-                                            <input type="text" class="form-control " placeholder="Page Keyword">
-                                        </div>
-
-
-
-                                    </div> -->
-                                </div>
-                            </form>
-                            <div class="NgxEditor__Wrapper form-group mt-1">
-                                <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
-                                <ngx-editor [editor]="editor" [ngModel]="html" [disabled]="false"
-                                    [placeholder]="'Type here...'">
-                                </ngx-editor>
-                            </div>
-
-
-                        </div>
-                        <div class="modal-footer">
-
-                            <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal"
-                                (click)="modal.close()">Cancel</button>
-                            <button type="button" class="btn btn-info btn-rounded" (click)="modal.close()">Save</button>
-                        </div>
-                    </div>
-                </ng-template>
-                <!-- Modal Ends -->
-            </div>
+  <div class="col-12 grid-margin">
+    <div>
+      <div class="card-body cardheader">
+        <div class="page-header">
+          <h3 class="page-title">
+            <span class="page-title-icon bg-info text-white mr-2">
+              <i class="mdi mdi-view-grid"></i>
+            </span>
+            Categories
+          </h3>
+          <div class="text-right">
+            <button
+              type="button"
+              class="btn btn-info btn-sm btn-rounded"
+              (click)="openModal(exampleModalContent)"
+            >
+              <i class="mdi mdi-plus mr-1"></i>Add Category
+            </button>
+          </div>
         </div>
+
+        <!-- Modal Starts -->
+
+        <ng-template class="modal fade" #exampleModalContent let-modal>
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="exampleModalLabel">Add Category</h3>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+                (click)="modal.dismiss()"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- <p>Modal body text goes here </p> -->
+              <form class="pt-3" [formGroup]="categoryForm">
+                <div class="row">
+                  <!-- imgcenter -->
+                  <div class="ml-0 form-group col-lg-2">
+                    <label class="hoverable" for="fileInput">
+                      <img
+                        class="img"
+                        [src]="url ? url : 'assets/images/faces/panadol.jpg'"
+                      />
+                      <div class="hover-text">
+                        Image Will Be Loaded Automatically After Inputing
+                        ImageID
+                      </div>
+                      <div class="background"></div>
+                    </label>
+                    <br />
+                  </div>
+
+                  <div
+                    class="form-group col-lg-8 ml-0"
+                    style="margin-left: 15% !important"
+                  >
+                    <div class="row">
+                      <div class="form-group col-lg-6 mt-0">
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="categoryName"
+                          placeholder="Category Name"
+                          [(ngModel)]="this.categoryObject.categoryName"
+                        />
+                      </div>
+
+                      <div class="form-group col-lg-6 mt-0">
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="routeURL"
+                          placeholder="Route URL"
+                          [(ngModel)]="this.categoryObject.routeURL"
+                        />
+                      </div>
+                      <div class="form-group col-lg-6">
+                        <input
+                          type="name"
+                          class="form-control"
+                          formControlName="imageURL"
+                          (change)="loadImage($event)"
+                          placeholder="Image URL"
+                          [(ngModel)]="this.categoryObject.imageURL"
+                        />
+                      </div>
+                      <div class="form-group col-lg-6">
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="pageTitle"
+                          placeholder="Page Title"
+                          [(ngModel)]="this.categoryObject.pageTitle"
+                        />
+                      </div>
+                      <div class="form-group col-lg-6">
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="pageDescription"
+                          placeholder="Page Keyword"
+                          [(ngModel)]="this.categoryObject.pageDescription"
+                        />
+                      </div>
+                      <div class="form-group col-lg-6">
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="pageKeyword"
+                          placeholder="Page Keyword"
+                          [(ngModel)]="this.categoryObject.pageKeyword"
+                        />
+                      </div>
+                      <div class="form-group col-lg-6 ml-2 mt-2">
+                        <div class="custom-control custom-switch">
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="customSwitches"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="customSwitches"
+                            >Show in main menu</label
+                          >
+                        </div>
+                      </div>
+                      <div
+                        class="form-group col-lg-5 mt-2"
+                        style="margin-left: 0%"
+                      >
+                        <div class="custom-control custom-switch">
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="customSwitches"
+                          />
+                          <label
+                            class="custom-control-label"
+                            for="customSwitches"
+                            >Show in sidebar</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <div class="NgxEditor__Wrapper form-group mt-1">
+                <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+                <ngx-editor
+                  [editor]="editor"
+                  [(ngModel)]="categoryHTMLContent"
+                  [disabled]="false"
+                  [placeholder]="'Type here...'"
+                >
+                </ngx-editor>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-light btn-rounded"
+                data-dismiss="modal"
+                (click)="modal.close()"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                class="btn btn-info btn-rounded"
+                (click)="modal.close(); onSave()"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </ng-template>
+        <!-- Modal Ends -->
+      </div>
     </div>
+  </div>
 </div>
 
-
 <div class="row">
-    <div class="col-12 grid-margin">
-        <div class="card">
-            <div class="card-body">
-                <!-- <h4 class="card-title">Categories</h4> -->
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>
-                                    Category image
-                                </th>
-                                <th>
-                                    Category
-                                </th>
-                                <th>
-                                    Include in header
-                                </th>
-                                <th>
-                                    Include in sidebar
-                                </th>
-                                <th>
-                                    Action
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <img src="assets/images/faces/panadol.jpg" class="mr-2" alt="image">
-                                </td>
-                                <td>
-                                    antiboitic </td>
-                                <td>
-                                    <label class="badge badge-info badge-pill ">yes</label>
-                                </td>
-                                <td>
-                                    <label class="badge badge-info badge-pill">yes</label>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"
-                                        (click)="openModal(exampleModalContent)"></i> -->
-
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="assets/images/faces/disp.jpg" class="mr-2" alt="image">
-                                </td>
-                                <td>
-                                    boitic </td>
-                                <td>
-                                    <label class="badge badge-warning badge-pill">yes</label>
-                                </td>
-                                <td>
-                                    <label class="badge badge-warning badge-pill">yes</label>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"></i> -->
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="assets/images/faces/ibu.jpg" class="mr-2" alt="image">
-                                </td>
-                                <td>
-                                    anxiety meds </td>
-                                <td>
-                                    <label class="badge badge-success badge-pill">yes</label>
-                                </td>
-                                <td>
-                                    <label class="badge badge-success badge-pill">yes</label>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"></i> -->
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="assets/images/faces/augmentin.jpg" class="mr-2" alt="image">
-                                </td>
-                                <td>
-                                    anxiety meds </td>
-                                <td>
-                                    <label class="badge badge-danger badge-pill">yes</label>
-                                </td>
-                                <td>
-                                    <label class="badge badge-danger badge-pill">yes</label>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"></i> -->
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="assets/images/faces/disp.jpg" class="mr-2" alt="image">
-                                </td>
-                                <td>
-                                    anxiety meds </td>
-                                <td>
-                                    <label class="badge badge-info badge-pill">yes</label>
-                                </td>
-                                <td>
-                                    <label class="badge badge-info badge-pill">yes</label>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"></i> -->
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="assets/images/faces/ibu.jpg" class="mr-2" alt="image">
-                                </td>
-                                <td>
-                                    anxiety meds </td>
-                                <td>
-                                    <label class="badge badge-warning badge-pill">yes</label>
-                                </td>
-                                <td>
-                                    <label class="badge badge-warning badge-pill">yes</label>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"></i> -->
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="assets/images/faces/augmentin.jpg" class="mr-2" alt="image">
-                                </td>
-                                <td>
-                                    anxiety meds </td>
-                                <td>
-                                    <label class="badge badge-success badge-pill">yes</label>
-                                </td>
-                                <td>
-                                    <label class="badge badge-success badge-pill">yes</label>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"></i> -->
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="assets/images/faces/disp.jpg" class="mr-2" alt="image">
-                                </td>
-                                <td>
-                                    anxiety meds </td>
-                                <td>
-                                    <label class="badge badge-info badge-pill">yes</label>
-                                </td>
-                                <td>
-                                    <label class="badge badge-info badge-pill">yes</label>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"></i> -->
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="assets/images/faces/ibu.jpg" class="mr-2" alt="image">
-                                </td>
-                                <td>
-                                    anxiety meds </td>
-                                <td>
-                                    <label class="badge badge-warning badge-pill">yes</label>
-                                </td>
-                                <td>
-                                    <label class="badge badge-warning badge-pill">yes</label>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"></i> -->
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="assets/images/faces/augmentin.jpg" class="mr-2" alt="image">
-                                </td>
-                                <td>
-                                    anxiety meds </td>
-                                <td>
-                                    <label class="badge badge-success badge-pill">yes</label>
-                                </td>
-                                <td>
-                                    <label class="badge badge-success badge-pill">yes</label>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"></i> -->
-
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+  <div class="col-12 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Category image</th>
+                <th>Category</th>
+                <th>Include in header</th>
+                <th>Include in sidebar</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="this._CategoryService.allCategoryData != undefined">
+              <tr
+                *ngFor="let category of this._CategoryService.allCategoryData"
+              >
+                <td>
+                  <img [src]="category.imageURL" alt="" />
+                </td>
+                <td>
+                  {{ category.categoryName }}
+                </td>
+                <td>
+                  <label class="badge badge-info badge-pill">yes</label>
+                </td>
+                <td>
+                  <label class="badge badge-info badge-pill">yes</label>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-info btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-pencil"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
     </div>
+  </div>
 </div>

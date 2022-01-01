@@ -8,5 +8,5 @@ export class Product {
     imageSrc?: string;
     featureProduct?: boolean;
     prescription?: string;
-    typesOfPills?: TypesOfPills[]
+    typesOfPill?: TypesOfPills[]
 }

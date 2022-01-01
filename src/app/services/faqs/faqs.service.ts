@@ -22,7 +22,6 @@ export class FaqsService {
       (err) => {
         console.log(err)
       }, () => {
-        this.LoadAllFAQs()
       }
     )
   }

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Editor } from 'ngx-editor';
+import { Category } from '../Models/Category/Category-Model';
+import { CategoryService } from '../Services/Category/category.service';
+import { FormBuilder, FormControl, FormGroupDirective, NgForm, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-categories',
@@ -9,24 +12,63 @@ import { Editor } from 'ngx-editor';
 })
 export class CategoriesComponent implements OnInit {
   editor: Editor;
+  categoryHTMLContent: any = "";
+  name = 'Angular 4';
+  url: any;
+  categoryObject: Category;
+  categoryForm: FormGroup = this.fb.group({
+    categoryName: ['', Validators.required],
+    routeURL: ['', Validators.required],
+    imageURL: ['', Validators.required],
+    pageTitle: ['', Validators.required],
+    pageDescription: ['', Validators.required],
+    pageKeyword: ['', Validators.required],
+  })
 
-  constructor(private modalService: NgbModal) { }
+  constructor(
+    private modalService: NgbModal,
+    private fb: FormBuilder,
+    public _CategoryService: CategoryService
+  ) { }
 
   ngOnInit(): void {
     this.editor = new Editor();
 
+    this.categoryObject = {
+      categoryName: null,
+      routeURL: null,
+      imageURL: null,
+      showInSideMenu: null,
+      pageTitle: null,
+      pageDescription: null,
+      pageKeyword: null,
+      pageContent: null,
+    }
+
+    this._CategoryService.getAllCategory()
   }
   // make sure to destory the editor
   ngOnDestroy(): void {
     this.editor.destroy();
   }
 
-  openModal( exampleModalContent ) {
-    this.modalService.open( exampleModalContent, { size : 'lg' } );
+  loadImage(event: Event) {
+    console.log(event.target)
+    let googleDriveImageURL = "https://drive.google.com/uc?id=";
+    googleDriveImageURL = googleDriveImageURL + this.categoryForm.get("imageURL").value;
+    this.url = googleDriveImageURL
+    console.log(googleDriveImageURL)
   }
 
-  name = 'Angular 4';
-  url :any;
+  showHTMLtext() {
+    console.log("Category Object : ", this.categoryForm)
+    console.log("HTML Content : ", this.categoryHTMLContent)
+  }
+
+  openModal(exampleModalContent) {
+    this.modalService.open(exampleModalContent, { size: 'lg' });
+  }
+
   onSelectFile(event) {
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
@@ -38,7 +80,22 @@ export class CategoriesComponent implements OnInit {
       }
     }
   }
-  public delete(){
+  public delete() {
     this.url = '';
+  }
+
+  onSave() {
+    this.categoryObject.categoryName = this.categoryForm.get("categoryName").value;
+    this.categoryObject.routeURL = this.categoryForm.get("routeURL").value;
+    this.categoryObject.imageURL = "https://drive.google.com/uc?id=" + this.categoryForm.get("imageURL").value;
+    this.categoryObject.showInSideMenu = true;
+    this.categoryObject.pageTitle = this.categoryForm.get("pageTitle").value;
+    this.categoryObject.pageDescription = this.categoryForm.get("pageDescription").value;
+    this.categoryObject.pageKeyword = this.categoryForm.get("pageKeyword").value;
+    this.categoryObject.pageContent = this.categoryHTMLContent;
+
+    console.log("Category Object : ", this.categoryObject)
+
+    this._CategoryService.postCategory(this.categoryObject)
   }
 }

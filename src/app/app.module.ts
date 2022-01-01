@@ -8,7 +8,6 @@ import { ChartsModule, ThemeService } from 'ng2-charts';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
@@ -49,6 +48,7 @@ import { FaqsComponent } from './faqs/faqs.component';
 
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,
@@ -58,6 +58,9 @@ import { FaqsComponent } from './faqs/faqs.component';
     ChartsModule,
     NgxEditorModule,
     HttpClientModule
+  ],
+  exports: [
+    ReactiveFormsModule
   ],
   providers: [ThemeService, HttpClientModule],
   bootstrap: [AppComponent]

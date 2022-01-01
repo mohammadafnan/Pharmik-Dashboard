@@ -98,7 +98,7 @@
                         <input
                           type="text"
                           class="form-control"
-                          placeholder="Product priority"
+                          placeholder="Image URL ID"
                         />
                       </div>
                       <div class="form-group col-lg-6">
@@ -143,7 +143,7 @@
                   </div>
                 </div>
 
-                <div class="row">
+                <!-- <div class="row">
                   <div class="form-group col-lg-4">
                     <select class="form-control">
                       <option selected>Best Seller</option>
@@ -168,7 +168,7 @@
                       <option value="3">Three</option>
                     </select>
                   </div>
-                </div>
+                </div> -->
                 <div class="row">
                   <div class="form-group col-lg-4">
                     <input
@@ -351,11 +351,7 @@
             <tbody>
               <tr *ngFor="let product of this._ProductService.allProductsData">
                 <td style="text-align: center">
-                  <img
-                    src="assets/images/faces/zopiclone.jpg"
-                    class="mr-2"
-                    alt="image"
-                  />
+                  <img [src]="product.imageURLID" class="mr-2" alt="image" />
                 </td>
                 <td class="line_height">{{ product.category }}</td>
                 <td class="line_height">{{ product.name }}</td>
