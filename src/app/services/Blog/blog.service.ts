@@ -45,7 +45,11 @@ export class BlogService {
         )
     }
 
-    updateCart(CartObject, id) {
-        return this._http.put<any>(environment.apiPath + 'carts/' + id, CartObject)
+    updateCart(BlogObject, id) {
+        return this._http.put<any>(environment.apiPath + 'blogs/' + id, BlogObject)
+    }
+
+    deleteBlog(id) {
+        return this._http.delete<any>(environment.apiPath + 'blogs/' + id)
     }
 }

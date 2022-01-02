@@ -25,6 +25,7 @@ export class BlogComponent implements OnInit {
     ["text_color", "background_color"],
     ["align_left", "align_center", "align_right", "align_justify"]
   ];
+  blogData: any;
   blogObject: any;
   blogForm: FormGroup = this.fb.group({
     name: ['', Validators.required],
@@ -32,7 +33,7 @@ export class BlogComponent implements OnInit {
     pageDescription: ['', Validators.required],
     pageTitle: ['', Validators.required],
     urlParameter: ['', Validators.required],
-    bannerImageURL:['', Validators.required],
+    bannerImageURL: ['', Validators.required],
     writer: ['', Validators.required],
     date: ['', Validators.required],
     heading: ['', Validators.required],
@@ -48,6 +49,10 @@ export class BlogComponent implements OnInit {
 
   ngOnInit(): void {
     this.editor = new Editor();
+    this._BlogService.getAllBlogs();
+    setTimeout(() => {
+      this.setKeywordsInBlogData();
+    }, 2000);
 
     this.blogObject = {
       name: null,
@@ -55,7 +60,7 @@ export class BlogComponent implements OnInit {
       pageDescription: null,
       pageTitle: null,
       urlParameter: null,
-      bannerImageURL:null,
+      bannerImageURL: null,
       writer: null,
       date: null,
       heading: null,
@@ -76,9 +81,7 @@ export class BlogComponent implements OnInit {
   onSelectFile(event) {
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
-
       reader.readAsDataURL(event.target.files[0]);
-
       reader.onload = (event) => {
         this.url = event.target.result;
       }
@@ -106,4 +109,31 @@ export class BlogComponent implements OnInit {
 
     this._BlogService.postBlogs(this.blogObject)
   }
+
+  setKeywordsInBlogData() {
+    console.log("Blog Properties")
+    var keywordArray = [];
+    const re = /\s*(?:;|$)\s*/
+    this.blogData = this._BlogService.allBlogsData
+    console.log("BlogData #458487 :", this.blogData)
+    for (var i = 0; i < this.blogData.length; i++) {
+      keywordArray = [];
+      console.log(this.blogData[i])
+      keywordArray = this.blogData[i].keyword.split(re)
+      this.blogData[i].keyword = keywordArray;
+      console.log("Blog With Keyword Array : ", this.blogData[i])
+    }
+  }
+
+  deleteBlog(blogObject) {
+    this._BlogService.deleteBlog(blogObject.id).subscribe(
+      data => {
+        console.log("Blog Deleted Successfully")
+      }, err => {
+        console.log(err)
+      }, () => {
+      }
+    )
+  }
+
 }
