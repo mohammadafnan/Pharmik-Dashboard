@@ -27,6 +27,8 @@ import { BannerComponent } from './banner/banner.component';
 import { OrdermanagmentComponent } from './ordermanagment/ordermanagment.component';
 import { FaqsComponent } from './faqs/faqs.component';
 import { CouponComponent } from './coupon/coupon.component';
+import { NewsLetterComponent } from './news-letter/news-letter.component';
+import { WebinfoComponent } from './webinfo/webinfo.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { CouponComponent } from './coupon/coupon.component';
     OrdermanagmentComponent,
     FaqsComponent,
     CouponComponent,
-
+    NewsLetterComponent,
+    WebinfoComponent,
   ],
   imports: [
     HttpClientModule,
