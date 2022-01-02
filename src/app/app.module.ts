@@ -29,6 +29,7 @@ import { FaqsComponent } from './faqs/faqs.component';
 import { CouponComponent } from './coupon/coupon.component';
 import { NewsLetterComponent } from './news-letter/news-letter.component';
 import { WebinfoComponent } from './webinfo/webinfo.component';
+import { CustomerQueryComponent } from './customer-query/customer-query.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { WebinfoComponent } from './webinfo/webinfo.component';
     CouponComponent,
     NewsLetterComponent,
     WebinfoComponent,
+    CustomerQueryComponent,
   ],
   imports: [
     HttpClientModule,
