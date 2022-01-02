@@ -26,17 +26,6 @@ export class CheckoutService {
     )
   }
 
-  postCheckout(Checkout) {
-    this._http.post<Checkout>(environment.apiPath + 'checkouts', Checkout).subscribe(
-      (data) => {
-        console.log(data)
-      },
-      (err) => {
-        console.log(err)
-      }
-    )
-  }
-
   getAllCheckouts() {
     if (this.allCheckoutsData != undefined || this.allCheckoutsData != null) {
       return this.allCheckoutsData
@@ -45,4 +34,9 @@ export class CheckoutService {
       this.LoadAllCheckouts();
     }
   }
+
+  updateOrderStatus(obj) {
+    return this._http.put<any>(environment.apiPath + 'checkouts', obj)
+  }
+
 }

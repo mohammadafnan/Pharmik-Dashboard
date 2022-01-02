@@ -10,20 +10,28 @@
             Products
           </h3>
           <div class="text-right">
-            <button type="button" class="btn btn-info btn-sm btn-rounded"
-              (click)="openModalforadd_product(Addproductmodal)">
+            <button
+              type="button"
+              class="btn btn-info btn-sm btn-rounded"
+              (click)="openModalforadd_product(Addproductmodal)"
+            >
               <i class="mdi mdi-plus mr-1"></i>Add Product
             </button>
           </div>
         </div>
-
 
         <!-- modal start for add product -->
         <ng-template class="modal fade" #Addproductmodal let-modal>
           <div class="modal-content">
             <div class="modal-header">
               <h3 class="modal-title" id="exampleModalLabel">Add Product</h3>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modal.dismiss()">
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+                (click)="modal.dismiss()"
+              >
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -34,28 +42,55 @@
                   <!-- imgcenter -->
                   <div class="ml-0 form-group col-lg-2">
                     <label class="hoverable" for="fileInput">
-                      <img class="img" [src]="url ? url : 'assets/images/faces/panadol.jpg'" />
+                      <img
+                        class="img"
+                        [src]="url ? url : 'assets/images/faces/panadol.jpg'"
+                      />
                       <div class="hover-text">Upload image</div>
                       <div class="background"></div>
                     </label>
                     <br />
-                    <input id="fileInput" type="file" (change)="onSelectFile($event)" />
+                    <input
+                      id="fileInput"
+                      type="file"
+                      (change)="onSelectFile($event)"
+                    />
                   </div>
 
-                  <div class="form-group col-lg-8 ml-0" style="margin-left: 16% !important">
+                  <div
+                    class="form-group col-lg-8 ml-0"
+                    style="margin-left: 16% !important"
+                  >
                     <div class="row">
                       <div class="form-group col-lg-6 mt-0">
-                        <input type="text" class="form-control" placeholder="Category name" />
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Category name"
+                        />
                       </div>
 
                       <div class="form-group col-lg-6 mt-0">
-                        <input type="text" class="form-control" placeholder="Product name" />
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Product name"
+                        />
                       </div>
                       <div class="form-group col-lg-6">
-                        <input type="name" class="form-control" placeholder="Product tags" />
+                        <input
+                          type="name"
+                          class="form-control"
+                          placeholder="Product tags"
+                        />
                       </div>
                       <div class="form-group col-lg-6">
-                        <input type="text" class="form-control" disabled placeholder="Blog URL" />
+                        <input
+                          type="text"
+                          class="form-control"
+                          disabled
+                          placeholder="Blog URL"
+                        />
                       </div>
                       <div class="form-group col-lg-6">
                         <input
@@ -65,13 +100,28 @@
                         />
                       </div>
                       <div class="form-group col-lg-6">
-                        <input type="name" class="form-control" disabled placeholder="Page Title" />
+                        <input
+                          type="name"
+                          class="form-control"
+                          disabled
+                          placeholder="Page Title"
+                        />
                       </div>
                       <div class="form-group col-lg-6">
-                        <input type="text" class="form-control" disabled placeholder="Page Description" />
+                        <input
+                          type="text"
+                          class="form-control"
+                          disabled
+                          placeholder="Page Description"
+                        />
                       </div>
                       <div class="form-group col-lg-6">
-                        <input type="text" class="form-control" disabled placeholder="Page Keyword" />
+                        <input
+                          type="text"
+                          class="form-control"
+                          disabled
+                          placeholder="Page Keyword"
+                        />
                       </div>
 
                       <!-- <div class="form-group col-lg-6 ml-2 mt-2">
@@ -122,18 +172,37 @@
                 </div> -->
                 <div class="row">
                   <div class="form-group col-lg-4">
-                    <input type="text" class="form-control" placeholder="Comments" disabled />
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Comments"
+                      disabled
+                    />
                   </div>
                   <div class="form-group col-lg-4 ml-0 mt-2">
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" class="custom-control-input" id="customSwitches" name="test2" />
-                      <label class="custom-control-label" for="customSwitches">Show in main menu</label>
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="customSwitches"
+                        name="test2"
+                      />
+                      <label class="custom-control-label" for="customSwitches"
+                        >Show in main menu</label
+                      >
                     </div>
                   </div>
                   <div class="form-group col-lg-4 mt-2" style="margin-left: 0%">
                     <div class="custom-control custom-switch">
-                      <input type="checkbox" class="custom-control-input" id="customSwitches" name="test" />
-                      <label class="custom-control-label" for="customSwitches">Show in sidebar</label>
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        id="customSwitches"
+                        name="test"
+                      />
+                      <label class="custom-control-label" for="customSwitches"
+                        >Show in sidebar</label
+                      >
                     </div>
                   </div>
                 </div>
@@ -228,15 +297,29 @@
 
               <div class="NgxEditor__Wrapper form-group mt-3">
                 <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
-                <ngx-editor [editor]="editor" [ngModel]="html" [disabled]="false" [placeholder]="'Type here...'">
+                <ngx-editor
+                  [editor]="editor"
+                  [ngModel]="html"
+                  [disabled]="false"
+                  [placeholder]="'Type here...'"
+                >
                 </ngx-editor>
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal" (click)="modal.close()">
+              <button
+                type="button"
+                class="btn btn-light btn-rounded"
+                data-dismiss="modal"
+                (click)="modal.close()"
+              >
                 Cancel
               </button>
-              <button type="button" class="btn btn-info btn-rounded" (click)="modal.close()">
+              <button
+                type="button"
+                class="btn btn-info btn-rounded"
+                (click)="modal.close()"
+              >
                 Save
               </button>
             </div>
@@ -244,14 +327,18 @@
         </ng-template>
         <!-- Modal Ends -->
 
-
-
         <!-- modal start for add type -->
         <ng-template class="modal fade" #Addtypemodal let-modal>
           <div class="modal-content">
             <div class="modal-header">
               <h3 class="modal-title" id="exampleModalLabel">Add Type</h3>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modal.dismiss()">
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+                (click)="modal.dismiss()"
+              >
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -272,29 +359,52 @@
                   <!-- <div class="form-group col-lg-8 ml-0" style="margin-left: 16% !important"> -->
                   <!-- <div class="row"> -->
                   <div class="form-group col-lg-6 mt-0">
-                    <input type="text" class="form-control" placeholder="Power" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Power"
+                    />
                   </div>
 
                   <div class="form-group col-lg-6 mt-0">
-                    <input type="text" class="form-control" placeholder="Quantity" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Quantity"
+                    />
                   </div>
                   <div class="form-group col-lg-6">
-                    <input type="name" class="form-control" placeholder="Price Per Pill" />
+                    <input
+                      type="name"
+                      class="form-control"
+                      placeholder="Price Per Pill"
+                    />
                   </div>
                   <div class="form-group col-lg-6">
-                    <input type="name" class="form-control" placeholder="Price" />
+                    <input
+                      type="name"
+                      class="form-control"
+                      placeholder="Price"
+                    />
                   </div>
                 </div>
                 <!-- </div> -->
                 <!-- </div> -->
-
-
               </form>
               <div class="modal-footer">
-                <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal" (click)="modal.close()">
+                <button
+                  type="button"
+                  class="btn btn-light btn-rounded"
+                  data-dismiss="modal"
+                  (click)="modal.close()"
+                >
                   Cancel
                 </button>
-                <button type="button" class="btn btn-info btn-rounded" (click)="modal.close()">
+                <button
+                  type="button"
+                  class="btn btn-info btn-rounded"
+                  (click)="modal.close()"
+                >
                   Save
                 </button>
               </div>
@@ -318,31 +428,32 @@
                               <th>Price</th>
                               <th>View</th>
                               <th>Delete</th>
-
-
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
-
                               <td class="line_height">250 mg</td>
-                              <td class="line_height">30 (pills) </td>
+                              <td class="line_height">30 (pills)</td>
                               <td class="line_height">£ 1.07</td>
                               <td>£ 50</td>
 
-
                               <td>
-                                <button type="button" class="btn btn-info btn-rounded btn-icon">
+                                <button
+                                  type="button"
+                                  class="btn btn-info btn-rounded btn-icon"
+                                >
                                   <i class="mdi mdi-eye"></i>
                                 </button>
                                 <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"
                                                       (click)="openModal(exampleModalContent)"></i> -->
                               </td>
                               <td>
-                                <button type="button" class="btn btn-danger btn-rounded btn-icon">
+                                <button
+                                  type="button"
+                                  class="btn btn-danger btn-rounded btn-icon"
+                                >
                                   <i class="mdi mdi-delete"></i>
                                 </button>
-
                               </td>
                             </tr>
                           </tbody>
@@ -352,8 +463,6 @@
                   </div>
                 </div>
               </div>
-
-
             </div>
             <!-- <div class="modal-footer">
               <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal" (click)="modal.close()">
@@ -390,7 +499,6 @@
                 <th class="line_height">Add Quantity</th>
                 <th>View</th>
                 <th>Add Type</th>
-
               </tr>
             </thead>
             <tbody>
@@ -411,19 +519,29 @@
                 <td>100</td>
 
                 <td>
-                  <button type="button" class="btn btn-info btn-rounded btn-icon">
+                  <button
+                    type="button"
+                    class="btn btn-info btn-rounded btn-icon"
+                  >
                     <i class="mdi mdi-eye"></i>
                   </button>
                   <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"
                                         (click)="openModal(exampleModalContent)"></i> -->
                 </td>
                 <td>
-                  <button type="button" class="btn btn-warning btn-rounded btn-icon"
-                    (click)="openModalforadd_type(Addtypemodal)">
+                  <button
+                    type="button"
+                    class="btn btn-warning btn-rounded btn-icon"
+                    (click)="openModalforadd_type(Addtypemodal)"
+                  >
                     <i class="mdi mdi-plus"></i>
                   </button>
-                  <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 16px;"
-                                        (click)="openModal(exampleModalContent)"></i> -->
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-delete"></i>
+                  </button>
                 </td>
               </tr>
             </tbody>

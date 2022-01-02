@@ -1,76 +1,145 @@
 <div class="row">
-    <div class="col-12 grid-margin">
-        <div>
-            <div class="card-body cardheader">
-                <div class="page-header">
-                    <h3 class="page-title">
-                        <span class="page-title-icon bg-info text-white mr-2">
-                            <i class="mdi mdi-blogger"></i>
-                        </span>
-                        Blog
-                    </h3>
-                    <div class="text-right">
-                        <button type="button" class="btn btn-info btn-sm btn-rounded"
-                            (click)="openModal(exampleModalContent)">
-                            <i class="mdi mdi-plus mr-1"></i>Add Blog</button>
-                    </div>
-                </div>
-                <!-- <div class="text-right">
+  <div class="col-12 grid-margin">
+    <div>
+      <div class="card-body cardheader">
+        <div class="page-header">
+          <h3 class="page-title">
+            <span class="page-title-icon bg-info text-white mr-2">
+              <i class="mdi mdi-blogger"></i>
+            </span>
+            Blog
+          </h3>
+          <div class="text-right">
+            <button
+              type="button"
+              class="btn btn-info btn-sm btn-rounded"
+              (click)="openModal(exampleModalContent)"
+            >
+              <i class="mdi mdi-plus mr-1"></i>Add Blog
+            </button>
+          </div>
+        </div>
+        <!-- <div class="text-right">
                     <button type="button" class="btn btn-info btn-sm btn-rounded"
                         (click)="openModal(exampleModalContent)">
                         <i class="mdi mdi-plus mr-1"></i>Add Blog</button>
                 </div> -->
-                <ng-template class="modal fade" #exampleModalContent let-modal>
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3 class="modal-title" id="exampleModalLabel">Add Blog</h3>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                                (click)="modal.dismiss()">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <!-- <p>Modal body text goes here </p> -->
-                            <form class="pt-3">
-                                <div class="row ">
-                                    <!-- imgcenter -->
-                                    <div class="ml-0 form-group col-lg-2">
-                                        <label class="hoverable " for="fileInput">
-                                            <img class="img" [src]="url ? url : 'assets/images/faces/blog1.jpg'">
-                                            <div class="hover-text">Upload image</div>
-                                            <div class="background"></div>
-                                        </label>
-                                        <br />
-                                        <input id="fileInput" type='file' (change)="onSelectFile($event)">
-                                        <!-- <div class="ml-4 badge badge-info badge-pill">Category image</div> -->
+        <ng-template class="modal fade" #exampleModalContent let-modal>
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="exampleModalLabel">Add Blog</h3>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+                (click)="modal.dismiss()"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- <p>Modal body text goes here </p> -->
+              <form class="pt-3" [formGroup]="blogForm">
+                <div class="row">
+                  <!-- imgcenter -->
+                  <div class="ml-0 form-group col-lg-2">
+                    <label class="hoverable" for="fileInput">
+                      <!-- <img
+                        class="img"
+                        [src]="url ? url : 'assets/images/faces/blog1.jpg'"
+                      />
+                      <div class="hover-text">Upload image</div> -->
+                      <img
+                        class="img"
+                        [src]="url ? url : 'assets/images/faces/blog1.jpg'"
+                      />
+                      <div class="hover-text">
+                        Image Will Be Loaded Automatically After Inputing Image
+                        URL ID
+                      </div>
+                      <div class="background"></div>
+                    </label>
+                    <br />
+                    <!-- <input
+                      id="fileInput"
+                      type="file"
+                      (change)="onSelectFile($event)"
+                    /> -->
+                    <!-- <div class="ml-4 badge badge-info badge-pill">Category image</div> -->
 
-                                        <!-- <button *ngIf="url" (click)="delete()">delete</button> -->
+                    <!-- <button *ngIf="url" (click)="delete()">delete</button> -->
+                  </div>
 
-                                    </div>
-
-                                    <div class="form-group col-lg-8 mt-3" style="margin-left: 15% !important">
-                                        <div class="row">
-
-
-                                            <div class="form-group col-lg-6 mt-0">
-                                                <input type="text" class="form-control " placeholder="Blog Title">
-                                            </div>
-                                            <div class="form-group col-lg-6">
-                                                <input type="name" class="form-control " placeholder="Blog URL">
-                                            </div>
-                                            <div class="form-group col-lg-6">
-                                                <input type="text" class="form-control " placeholder="Page Title">
-                                            </div>
-                                            <div class="form-group col-lg-6">
-                                                <input type="text" class="form-control " placeholder="Page Description">
-                                            </div>
-                                            <div class="form-group col-lg-6">
-                                                <input type="text" class="form-control " placeholder="page keyword">
-                                            </div>
-                                            <div class="form-group col-lg-6 mt-0">
-                                                <input type="text" class="form-control " placeholder="Comments">
-                                            </div>
-                                            <!-- <div class="form-group col-lg-6 ml-2 mt-2">
+                  <div
+                    class="form-group col-lg-8 mt-3"
+                    style="margin-left: 15% !important"
+                  >
+                    <div class="row">
+                      <div class="form-group col-lg-6 mt-0">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Blog Title"
+                          formControlName="name"
+                          [(ngModel)]="this.blogObject.name"
+                        />
+                      </div>
+                      <div class="form-group col-lg-6">
+                        <input
+                          type="name"
+                          class="form-control"
+                          placeholder="Blog URL Paramter"
+                          formControlName="name"
+                          [(ngModel)]="this.blogObject.urlParameter"
+                        />
+                      </div>
+                      <div class="form-group col-lg-6">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Page Title"
+                          formControlName="pageTitle"
+                          [(ngModel)]="this.blogObject.pageTitle"
+                        />
+                      </div>
+                      <div class="form-group col-lg-6">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Page Description"
+                          formControlName="pageDescription"
+                          [(ngModel)]="this.blogObject.pageDescription"
+                        />
+                      </div>
+                      <div class="form-group col-lg-6">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="page keyword"
+                          formControlName="keyword"
+                          [(ngModel)]="this.blogObject.keyword"
+                        />
+                      </div>
+                      <div class="form-group col-lg-6 mt-0">
+                        <input
+                          type="name"
+                          class="form-control"
+                          formControlName="bannerImageURL"
+                          (change)="loadImage($event)"
+                          placeholder="Banner Image URL ID"
+                          [(ngModel)]="this.categoryObject.imageURL"
+                        />
+                      </div>
+                      <!-- <div class="form-group col-lg-6 mt-0">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Comments"
+                          disabled
+                        />
+                      </div> -->
+                      <!-- <div class="form-group col-lg-6 ml-2 mt-2">
                                                 <div class="custom-control custom-switch ">
                                                     <input type="checkbox" class="custom-control-input"
                                                         id="customSwitches">
@@ -86,12 +155,10 @@
                                                         sidebar</label>
                                                 </div>
                                             </div> -->
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                                <!-- <div class="row ">
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="row ">
                                     <div class="form-group col-lg-3">
                                         <label class="hoverable" for="fileInput">
                                             <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'">
@@ -125,412 +192,506 @@
                                     </div>
 
                                 </div> -->
-                            </form>
+              </form>
 
-                                <div class="NgxEditor__Wrapper form-group mt-3">
-                                    <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
-                                    <ngx-editor [editor]="editor" [ngModel]="html" [disabled]="false"
-                                        [placeholder]="'Type here...'"></ngx-editor>
-                                </div>
-
-                        </div>
-                        <div class="modal-footer">
-
-                            <button type="button" class="btn btn-light btn-rounded" data-dismiss="modal"
-                                (click)="modal.close()">Cancel</button>
-                            <button type="button" class="btn btn-info btn-rounded" (click)="modal.close()">Save</button>
-                        </div>
-                    </div>
-                </ng-template>
-                <!-- Modal Ends -->
+              <div class="NgxEditor__Wrapper form-group mt-3">
+                <ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+                </ngx-editor-menu>
+                <ngx-editor
+                  [editor]="editor"
+                  [(ngModel)]="htmlContent"
+                  [disabled]="false"
+                  [placeholder]="'Enter Blog Content Here'"
+                >
+                </ngx-editor>
+              </div>
             </div>
-        </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-light btn-rounded"
+                data-dismiss="modal"
+                (click)="modal.close()"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                class="btn btn-info btn-rounded"
+                (click)="saveBlog();modal.close()"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </ng-template>
+        <!-- Modal Ends -->
+      </div>
     </div>
+  </div>
 </div>
 
-
 <div class="row">
-    <div class="col-12 grid-margin">
-        <div class="card">
-            <div class="card-body">
-                <!-- <h4 class="card-title">Blog</h4> -->
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>
-                                    Blog image
-                                </th>
-                                <th>
-                                    Blog title
-                                </th>
-                                <th>
-                                    key words </th>
-                                <th>
-                                    Status </th>
-                                <th>
-                                    Action </th>
-                                <th>
-                                    Comments
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <img src="assets/images/faces/blog1.jpg" class="mr-2" alt="image">
-                                </td>
-                                <td>
-                                    antiboitic </td>
-                                <td>
-                                    Covid </td>
-                                <td>
+  <div class="col-12 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <!-- <h4 class="card-title">Blog</h4> -->
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Blog Banner Image</th>
+                <th>Blog Title</th>
+                <th>Keywords</th>
+                <th>Status</th>
+                <th>Action</th>
+                <th>Comments</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <img
+                    src="assets/images/faces/blog1.jpg"
+                    class="mr-2"
+                    alt="image"
+                  />
+                </td>
+                <td>antiboitic</td>
+                <td>Covid</td>
+                <td>
+                  <label class="badge badge-info badge-pill">active</label>
+                </td>
 
-                                    <label class="badge badge-info badge-pill ">active</label>
-                                </td>
-
-                                <td>
-                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-rounded btn-icon ">
-                                        <i class="mdi mdi-delete"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-info btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-pencil"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-delete"></i>
+                  </button>
+                  <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
                                         (click)="openModal(exampleModalContent)"></i> -->
 
-                                    <!-- <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i> -->
+                  <!-- <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i> -->
+                </td>
 
-                                </td>
+                <td class="pl-4">
+                  <button
+                    type="button"
+                    class="btn btn-warning btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-comment-account"></i>
+                  </button>
+                  <!-- <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i> -->
+                </td>
+              </tr>
 
-                                <td class="pl-4">
-                                    <button type="button" class="btn btn-warning btn-rounded btn-icon ">
-                                        <i class="mdi mdi-comment-account"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+              <tr>
+                <td>
+                  <img
+                    src="assets/images/faces/blog2.jpg"
+                    class="mr-2"
+                    alt="image"
+                  />
+                </td>
+                <td>antiboitic</td>
+                <td>vaccination</td>
+                <td>
+                  <label class="badge badge-warning badge-pill">active</label>
+                </td>
+
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-info btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-pencil"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-delete"></i>
+                  </button>
+                  <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
                                         (click)="openModal(exampleModalContent)"></i> -->
 
-                                </td>
-                            </tr>
+                  <!-- <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i> -->
+                </td>
 
-                            <tr>
-                                <td>
-                                    <img src="assets/images/faces/blog2.jpg" class="mr-2" alt="image">
-                                </td>
-                                <td>
-                                    antiboitic </td>
-                                <td>
-                                    vaccination </td>
-                                <td>
-                                    <label class="badge badge-warning badge-pill ">active</label>
-                                </td>
-
-                                <td>
-                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-rounded btn-icon ">
-                                        <i class="mdi mdi-delete"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                <td class="pl-4">
+                  <button
+                    type="button"
+                    class="btn btn-warning btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-comment-account"></i>
+                  </button>
+                  <!-- <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i> -->
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="assets/images/faces/blog3.jpg"
+                    class="mr-2"
+                    alt="image"
+                  />
+                </td>
+                <td>antiboitic</td>
+                <td>Dange virus</td>
+                <td>
+                  <label class="badge badge-success badge-pill">active</label>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-info btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-pencil"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-delete"></i>
+                  </button>
+                  <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
                                         (click)="openModal(exampleModalContent)"></i> -->
 
-                                    <!-- <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i> -->
+                  <!-- <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i> -->
+                </td>
 
-                                </td>
+                <td class="pl-4">
+                  <button
+                    type="button"
+                    class="btn btn-warning btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-comment-account"></i>
+                  </button>
+                  <!-- <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i> -->
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="assets/images/faces/blog1.jpg"
+                    class="mr-2"
+                    alt="image"
+                  />
+                </td>
+                <td>antiboitic</td>
+                <td>blood pressure</td>
+                <td>
+                  <label class="badge badge-danger badge-pill">active</label>
+                </td>
 
-                                <td class="pl-4">
-                                    <button type="button" class="btn btn-warning btn-rounded btn-icon ">
-                                        <i class="mdi mdi-comment-account"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-info btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-pencil"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-delete"></i>
+                  </button>
+                  <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
                                         (click)="openModal(exampleModalContent)"></i> -->
 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="assets/images/faces/blog3.jpg" class="mr-2" alt="image">
-                                </td>
-                                <td>
-                                    antiboitic </td>
-                                <td>
-                                    Dange virus </td>
-                                <td>
-                                    <label class="badge badge-success badge-pill ">active</label>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-rounded btn-icon ">
-                                        <i class="mdi mdi-delete"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                  <!-- <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i> -->
+                </td>
+
+                <td class="pl-4">
+                  <button
+                    type="button"
+                    class="btn btn-warning btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-comment-account"></i>
+                  </button>
+                  <!-- <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i> -->
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="assets/images/faces/blog2.jpg"
+                    class="mr-2"
+                    alt="image"
+                  />
+                </td>
+                <td>antiboitic</td>
+                <td>covid</td>
+                <td>
+                  <label class="badge badge-info badge-pill">active</label>
+                </td>
+
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-info btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-pencil"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-delete"></i>
+                  </button>
+                  <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
                                         (click)="openModal(exampleModalContent)"></i> -->
 
-                                    <!-- <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i> -->
+                  <!-- <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i> -->
+                </td>
 
-                                </td>
-
-                                <td class="pl-4">
-                                    <button type="button" class="btn btn-warning btn-rounded btn-icon ">
-                                        <i class="mdi mdi-comment-account"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                <td class="pl-4">
+                  <button
+                    type="button"
+                    class="btn btn-warning btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-comment-account"></i>
+                  </button>
+                  <!-- <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i> -->
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="assets/images/faces/blog3.jpg"
+                    class="mr-2"
+                    alt="image"
+                  />
+                </td>
+                <td>antiboitic</td>
+                <td>vaccination</td>
+                <td>
+                  <label class="badge badge-warning badge-pill">active</label>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-info btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-pencil"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-delete"></i>
+                  </button>
+                  <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
                                         (click)="openModal(exampleModalContent)"></i> -->
 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="assets/images/faces/blog1.jpg" class="mr-2" alt="image">
-                                </td>
-                                <td>
-                                    antiboitic </td>
-                                <td>
-                                    blood pressure </td>
-                                <td>
-                                    <label class="badge badge-danger badge-pill ">active</label>
-                                </td>
+                  <!-- <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i> -->
+                </td>
 
-                                <td>
-                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-rounded btn-icon ">
-                                        <i class="mdi mdi-delete"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                <td class="pl-4">
+                  <button
+                    type="button"
+                    class="btn btn-warning btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-comment-account"></i>
+                  </button>
+                  <!-- <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i> -->
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="assets/images/faces/blog1.jpg"
+                    class="mr-2"
+                    alt="image"
+                  />
+                </td>
+                <td>antiboitic</td>
+                <td>covid</td>
+                <td>
+                  <label class="badge badge-success badge-pill">active</label>
+                </td>
+
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-info btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-pencil"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-delete"></i>
+                  </button>
+                  <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
                                         (click)="openModal(exampleModalContent)"></i> -->
 
-                                    <!-- <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i> -->
+                  <!-- <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i> -->
+                </td>
 
-                                </td>
+                <td class="pl-4">
+                  <button
+                    type="button"
+                    class="btn btn-warning btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-comment-account"></i>
+                  </button>
+                  <!-- <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i> -->
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="assets/images/faces/blog2.jpg"
+                    class="mr-2"
+                    alt="image"
+                  />
+                </td>
+                <td>antiboitic</td>
+                <td>dange virus</td>
+                <td>
+                  <label class="badge badge-warning badge-pill">active</label>
+                </td>
 
-                                <td class="pl-4">
-                                    <button type="button" class="btn btn-warning btn-rounded btn-icon ">
-                                        <i class="mdi mdi-comment-account"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-info btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-pencil"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-delete"></i>
+                  </button>
+                  <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
                                         (click)="openModal(exampleModalContent)"></i> -->
 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="assets/images/faces/blog2.jpg" class="mr-2" alt="image">
-                                </td>
-                                <td>
-                                    antiboitic </td>
-                                <td>
-                                    covid </td>
-                                <td>
-                                    <label class="badge badge-info badge-pill ">active</label>
-                                </td>
+                  <!-- <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i> -->
+                </td>
 
-                                <td>
-                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-rounded btn-icon ">
-                                        <i class="mdi mdi-delete"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                <td class="pl-4">
+                  <button
+                    type="button"
+                    class="btn btn-warning btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-comment-account"></i>
+                  </button>
+                  <!-- <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i> -->
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="assets/images/faces/blog3.jpg"
+                    class="mr-2"
+                    alt="image"
+                  />
+                </td>
+                <td>antiboitic</td>
+                <td>covid</td>
+                <td>
+                  <label class="badge badge-info badge-pill">active</label>
+                </td>
+
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-info btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-pencil"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-delete"></i>
+                  </button>
+                  <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
                                         (click)="openModal(exampleModalContent)"></i> -->
 
-                                    <!-- <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i> -->
+                  <!-- <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i> -->
+                </td>
 
-                                </td>
+                <td class="pl-4">
+                  <button
+                    type="button"
+                    class="btn btn-warning btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-comment-account"></i>
+                  </button>
+                  <!-- <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                                        (click)="openModal(exampleModalContent)"></i> -->
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="assets/images/faces/blog1.jpg"
+                    class="mr-2"
+                    alt="image"
+                  />
+                </td>
+                <td>antiboitic</td>
+                <td>virus</td>
+                <td>
+                  <label class="badge badge-warning badge-pill">active</label>
+                </td>
 
-                                <td class="pl-4">
-                                    <button type="button" class="btn btn-warning btn-rounded btn-icon ">
-                                        <i class="mdi mdi-comment-account"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-info btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-pencil"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-delete"></i>
+                  </button>
+                  <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
                                         (click)="openModal(exampleModalContent)"></i> -->
 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="assets/images/faces/blog3.jpg" class="mr-2" alt="image">
-                                </td>
-                                <td>
-                                    antiboitic </td>
-                                <td>
-                                    vaccination </td>
-                                <td>
-                                    <label class="badge badge-warning badge-pill ">active</label>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-rounded btn-icon ">
-                                        <i class="mdi mdi-delete"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
+                  <!-- <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i> -->
+                </td>
+
+                <td class="pl-4">
+                  <button
+                    type="button"
+                    class="btn btn-warning btn-rounded btn-icon"
+                  >
+                    <i class="mdi mdi-comment-account"></i>
+                  </button>
+                  <!-- <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
                                         (click)="openModal(exampleModalContent)"></i> -->
-
-                                    <!-- <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i> -->
-
-                                </td>
-
-                                <td class="pl-4">
-                                    <button type="button" class="btn btn-warning btn-rounded btn-icon ">
-                                        <i class="mdi mdi-comment-account"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
-                                        (click)="openModal(exampleModalContent)"></i> -->
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="assets/images/faces/blog1.jpg" class="mr-2" alt="image">
-                                </td>
-                                <td>
-                                    antiboitic </td>
-                                <td>
-                                    covid </td>
-                                <td>
-                                    <label class="badge badge-success badge-pill ">active</label>
-                                </td>
-
-                                <td>
-                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-rounded btn-icon ">
-                                        <i class="mdi mdi-delete"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
-                                        (click)="openModal(exampleModalContent)"></i> -->
-
-                                    <!-- <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i> -->
-
-                                </td>
-
-                                <td class="pl-4">
-                                    <button type="button" class="btn btn-warning btn-rounded btn-icon ">
-                                        <i class="mdi mdi-comment-account"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
-                                        (click)="openModal(exampleModalContent)"></i> -->
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="assets/images/faces/blog2.jpg" class="mr-2" alt="image">
-                                </td>
-                                <td>
-                                    antiboitic </td>
-                                <td>
-                                    dange virus </td>
-                                <td>
-                                    <label class="badge badge-warning badge-pill ">active</label>
-                                </td>
-
-                                <td>
-                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-rounded btn-icon ">
-                                        <i class="mdi mdi-delete"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
-                                        (click)="openModal(exampleModalContent)"></i> -->
-
-                                    <!-- <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i> -->
-
-                                </td>
-
-                                <td class="pl-4">
-                                    <button type="button" class="btn btn-warning btn-rounded btn-icon ">
-                                        <i class="mdi mdi-comment-account"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
-                                        (click)="openModal(exampleModalContent)"></i> -->
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="assets/images/faces/blog3.jpg" class="mr-2" alt="image">
-                                </td>
-                                <td>
-                                    antiboitic </td>
-                                <td>
-                                    covid </td>
-                                <td>
-                                    <label class="badge badge-info badge-pill ">active</label>
-                                </td>
-
-                                <td>
-                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-rounded btn-icon ">
-                                        <i class="mdi mdi-delete"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
-                                        (click)="openModal(exampleModalContent)"></i> -->
-
-                                    <!-- <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i> -->
-
-                                </td>
-
-                                <td class="pl-4">
-                                    <button type="button" class="btn btn-warning btn-rounded btn-icon ">
-                                        <i class="mdi mdi-comment-account"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
-                                        (click)="openModal(exampleModalContent)"></i> -->
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="assets/images/faces/blog1.jpg" class="mr-2" alt="image">
-                                </td>
-                                <td>
-                                    antiboitic </td>
-                                <td>
-                                    virus </td>
-                                <td>
-                                    <label class="badge badge-warning badge-pill ">active</label>
-                                </td>
-
-                                <td>
-                                    <button type="button" class="btn btn-info btn-rounded btn-icon ">
-                                        <i class="mdi mdi-pencil"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-rounded btn-icon ">
-                                        <i class="mdi mdi-delete"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-pencil " style="color: #1a8ae3;font-size: 20px;"
-                                        (click)="openModal(exampleModalContent)"></i> -->
-
-                                    <!-- <i class=" mdi mdi-delete ml-2" style="color: #ff0000;font-size: 20px;"></i> -->
-
-                                </td>
-
-                                <td class="pl-4">
-                                    <button type="button" class="btn btn-warning btn-rounded btn-icon ">
-                                        <i class="mdi mdi-comment-account"></i>
-                                    </button>
-                                    <!-- <i class=" mdi mdi-comment-account ml-4" style="color: #00335e;font-size: 20px;"
-                                        (click)="openModal(exampleModalContent)"></i> -->
-
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
     </div>
+  </div>
 </div>
