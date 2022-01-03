@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
+import { GlobalService } from 'src/app/Services/Global/global.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,8 +12,8 @@ import { NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
 export class NavbarComponent implements OnInit {
   public iconOnlyToggled = false;
   public sidebarToggled = false;
-  
-  constructor(config: NgbDropdownConfig) {
+
+  constructor(config: NgbDropdownConfig, public router: Router, public globalService: GlobalService) {
     config.placement = 'bottom-right';
   }
 
@@ -26,21 +28,30 @@ export class NavbarComponent implements OnInit {
   // toggle sidebar
   toggleSidebar() {
     let body = document.querySelector('body');
-    if((!body.classList.contains('sidebar-toggle-display')) && (!body.classList.contains('sidebar-absolute'))) {
+    if ((!body.classList.contains('sidebar-toggle-display')) && (!body.classList.contains('sidebar-absolute'))) {
       this.iconOnlyToggled = !this.iconOnlyToggled;
-      if(this.iconOnlyToggled) {
+      if (this.iconOnlyToggled) {
         body.classList.add('sidebar-icon-only');
       } else {
         body.classList.remove('sidebar-icon-only');
       }
     } else {
       this.sidebarToggled = !this.sidebarToggled;
-      if(this.sidebarToggled) {
+      if (this.sidebarToggled) {
         body.classList.add('sidebar-hidden');
       } else {
         body.classList.remove('sidebar-hidden');
       }
     }
+  }
+
+  logout() {
+    localStorage.clear()
+    this.router.navigate(["/"])
+    this.globalService.openPopup(
+      "Success",
+      "Successfully Logout"
+    )
   }
 
   // toggle right sidebar

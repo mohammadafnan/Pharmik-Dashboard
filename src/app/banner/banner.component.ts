@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Editor } from 'ngx-editor';
+import { GlobalService } from '../Services/Global/global.service';
 
 @Component({
   selector: 'app-banner',
@@ -10,16 +11,19 @@ import { Editor } from 'ngx-editor';
 export class BannerComponent implements OnInit {
   editor: Editor;
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, public globalService: GlobalService) { }
 
 
   ngOnInit(): void {
+    this.globalService.checkIsUserAuthenticated();
     this.editor = new Editor();
 
   }
   // make sure to destory the editor
   ngOnDestroy(): void {
-    this.editor.destroy();
+    if (this.editor != null || this.editor != undefined) {
+      this.editor.destroy();
+    }
   }
 
   openModal(exampleModalContent) {

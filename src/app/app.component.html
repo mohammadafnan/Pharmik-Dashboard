@@ -2,7 +2,7 @@
   <app-navbar *ngIf="showNavbar"></app-navbar>
   <div class="container-fluid page-body-wrapper">
     <app-sidebar *ngIf="showSidebar"></app-sidebar>
-    <div class="main-panel" [ngClass]="{ 'main-panel-only' : !showSidebar }">
+    <div class="main-panel" [ngClass]="{ 'main-panel-only': !showSidebar }">
       <div class="content-wrapper">
         <app-spinner *ngIf="isLoading"></app-spinner>
         <div contentAnimate *ngIf="!isLoading" class="h-100">
@@ -15,4 +15,144 @@
     <!-- main-panel ends -->
   </div>
   <!-- page-body-wrapper ends -->
+</div>
+
+<div
+  id="popup1"
+  class="overlay"
+  *ngIf="
+    this.globalService.showError == true &&
+    this.globalService.errorTitle.slice(0, 2) != 'Su'
+  "
+>
+  <div
+    [ngClass]="
+      this.globalService.showError
+        ? 'popup scale-in-center'
+        : 'scale-out-center popup close'
+    "
+  >
+    <div class="animation-ctn">
+      <div class="icon icon--order-success svg">
+        <svg
+          viewBox="0 0 150 210"
+          xmlns="http://www.w3.org/2000/svg"
+          width="154px"
+          height="154px"
+        >
+          <g fill="none" stroke="#e71e23" stroke-width="2">
+            <circle
+              cx="77"
+              cy="77"
+              r="72"
+              style="stroke-dasharray: 480px, 480px; stroke-dashoffset: 960px"
+            ></circle>
+            <circle
+              id="colored"
+              fill="#e71e23"
+              cx="77"
+              cy="77"
+              r="72"
+              style="stroke-dasharray: 480px, 480px; stroke-dashoffset: 960px"
+            ></circle>
+            <polyline
+              class="st0"
+              stroke="#fff"
+              stroke-width="10"
+              points="43.5,77.8  112.2,77.8 "
+              style="stroke-dasharray: 100px, 100px; stroke-dashoffset: 200px"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
+    <h2
+      style="
+        color: #e71e23;
+        font-weight: 700;
+        text-align: center;
+        transform: translateY(-15px);
+      "
+    >
+      {{ this.globalService.errorTitle }}
+    </h2>
+    <a
+      class="close"
+      (click)="this.globalService.showError = !this.globalService.showError"
+      >&times;</a
+    >
+    <div class="content">
+      {{ this.globalService.errorMessage }}
+    </div>
+  </div>
+</div>
+
+<div
+  id="popup1"
+  class="overlay"
+  *ngIf="
+    this.globalService.showError == true &&
+    this.globalService.errorTitle.slice(0, 2) == 'Su'
+  "
+>
+  <div
+    [ngClass]="
+      this.globalService.showError
+        ? 'popup scale-in-center'
+        : 'scale-out-center popup close'
+    "
+  >
+    <div class="animation-ctn">
+      <div class="icon icon--order-success svg">
+        <svg
+          viewBox="0 0 150 210"
+          xmlns="http://www.w3.org/2000/svg"
+          width="154px"
+          height="154px"
+        >
+          <g fill="none" stroke="#22AE73" stroke-width="2">
+            <circle
+              cx="77"
+              cy="77"
+              r="72"
+              style="stroke-dasharray: 480px, 480px; stroke-dashoffset: 960px"
+            ></circle>
+            <circle
+              id="colored"
+              fill="#22AE73"
+              cx="77"
+              cy="77"
+              r="72"
+              style="stroke-dasharray: 480px, 480px; stroke-dashoffset: 960px"
+            ></circle>
+            <polyline
+              class="st0"
+              stroke="#fff"
+              stroke-width="10"
+              points="43.5,77.8 63.7,97.9 112.2,49.4 "
+              style="stroke-dasharray: 100px, 100px; stroke-dashoffset: 200px"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
+    <h2
+      style="
+        color: #22ae73;
+        font-weight: 700;
+        text-align: center;
+        transform: translateY(-15px);
+      "
+    >
+      {{ this.globalService.errorTitle }}
+    </h2>
+    <a
+      class="close"
+      (click)="this.globalService.showError = !this.globalService.showError"
+      >&times;</a
+    >
+    <div class="content">
+      {{ this.globalService.errorMessage }}
+    </div>
+  </div>
 </div>

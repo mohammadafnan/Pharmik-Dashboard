@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalService } from '../Services/Global/global.service';
 import { WebsiteinfoService } from '../Services/WebsiteInfo/websiteinfo.service';
 
 @Component({
@@ -9,11 +10,13 @@ import { WebsiteinfoService } from '../Services/WebsiteInfo/websiteinfo.service'
 export class WebinfoComponent implements OnInit {
 
   constructor(
+    public globalService: GlobalService,
     public _WebsiteInfoService: WebsiteinfoService
   ) { }
 
   ngOnInit(): void {
-    this._WebsiteInfoService.LoadWebsiteInfo
+    this.globalService.checkIsUserAuthenticated();
+    this._WebsiteInfoService.LoadWebsiteInfo();
   }
 
   updateWebInfo(webInfoObject) {
@@ -23,6 +26,18 @@ export class WebinfoComponent implements OnInit {
       },
       (err) => {
         console.log(err)
+        if (err.status == 401) {
+          this.globalService.openPopup(
+            "Error",
+            "Token Expire ! Please Login Again"
+          )
+        }
+        else {
+          this.globalService.openPopup(
+            "Error",
+            "Website Information Update Failed !"
+          )
+        }
       }, () => {
       }
     )

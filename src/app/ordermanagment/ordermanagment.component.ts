@@ -3,6 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Editor } from 'ngx-editor';
 import { CheckoutService } from '../Services/Checkout/checkout.service';
 import { CartService } from '../Services/Cart/cart.service';
+import { GlobalService } from '../Services/Global/global.service';
 
 @Component({
   selector: 'app-ordermanagment',
@@ -22,17 +23,21 @@ export class OrdermanagmentComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
     public _CheckoutService: CheckoutService,
-    public _CartService: CartService
+    public _CartService: CartService,
+    public globalService: GlobalService
   ) { }
 
   ngOnInit(): void {
+    this.globalService.checkIsUserAuthenticated();
     this.editor = new Editor();
     this._CheckoutService.getAllCheckouts();
     this._CartService.getAllCarts();
   }
   // make sure to destory the editor
   ngOnDestroy(): void {
-    this.editor.destroy();
+    if (this.editor != null || this.editor != undefined) {
+      this.editor.destroy();
+    }
   }
 
   openModal(exampleModalContent, cart) {
@@ -70,9 +75,25 @@ export class OrdermanagmentComponent implements OnInit {
     this._CartService.updateCart(updateStatusObject, cartObject.id).subscribe(
       (data) => {
         console.log("Updated Cart Order Status:", data.orderStatus)
+        this.globalService.openPopup(
+          "Success",
+          "Cart Status Updated Successfully !"
+        )
       },
       (err) => {
         console.log(err)
+        if (err.status == 401) {
+          this.globalService.openPopup(
+            "Error",
+            "Token Expire ! Please Login Again"
+          )
+        }
+        else {
+          this.globalService.openPopup(
+            "Error",
+            "Cart Status Updation Failed !"
+          )
+        }
       }, () => {
         this._CartService.LoadAllCarts();
       }

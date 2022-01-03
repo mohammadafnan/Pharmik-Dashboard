@@ -3,6 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Editor } from 'ngx-editor';
 import { Product } from '../Models/Product/Product-Model';
 import { ProductService } from '../Services/product/product.service';
+import { GlobalService } from '../Services/Global/global.service';
 
 @Component({
   selector: 'app-products',
@@ -12,9 +13,14 @@ import { ProductService } from '../Services/product/product.service';
 export class ProductsComponent implements OnInit {
   editor: Editor;
 
-  constructor(private modalService: NgbModal, public _ProductService: ProductService) { }
+  constructor(
+    private modalService: NgbModal,
+    public _ProductService: ProductService,
+    public globalService: GlobalService
+  ) { }
 
   ngOnInit(): void {
+    this.globalService.checkIsUserAuthenticated();
     this._ProductService.LoadAllProducts();
     setTimeout(() => {
       console.log(this._ProductService.allProductsData)
@@ -24,14 +30,16 @@ export class ProductsComponent implements OnInit {
   }
   // make sure to destory the editor
   ngOnDestroy(): void {
-    this.editor.destroy();
+    if (this.editor != null || this.editor != undefined) {
+      this.editor.destroy();
+    }
   }
 
-  openModalforadd_product (Addproductmodal) {
+  openModalforadd_product(Addproductmodal) {
     this.modalService.open(Addproductmodal, { size: 'lg' });
   }
 
-  openModalforadd_type (Addtypemodal) {
+  openModalforadd_type(Addtypemodal) {
     this.modalService.open(Addtypemodal, { size: 'lg' });
   }
 

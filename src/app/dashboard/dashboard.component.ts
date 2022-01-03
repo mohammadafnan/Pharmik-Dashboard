@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalService } from '../Services/Global/global.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,9 +14,10 @@ export class DashboardComponent implements OnInit {
     document.querySelector('body').classList.toggle('removeProbanner');
   }
 
-  constructor() { }
+  constructor(public globalService:GlobalService) { }
 
   ngOnInit() {
+    // this.globalService.checkIsUserAuthenticated();
   }
 
   date: Date = new Date();

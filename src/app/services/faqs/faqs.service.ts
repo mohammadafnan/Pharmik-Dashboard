@@ -1,9 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { Observable, throwError, from } from 'rxjs';
 import { catchError, delay } from 'rxjs/operators';
 import { FAQ } from 'src/app/Models/FAQ/FAQ-Model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,21 @@ import { FAQ } from 'src/app/Models/FAQ/FAQ-Model';
 export class FaqsService {
 
   allFAQsData: FAQ[];
+  httpOptions: any;
+  userData!: any;
 
-  constructor(public _http: HttpClient) { }
+  constructor(public _http: HttpClient, public router: Router) {
+    this.userData = localStorage.getItem('tokenInfo')
+    if (this.userData == null || this.userData == undefined) {
+        this.router.navigate(["/"])
+    }
+    else {
+        this.httpOptions = new HttpHeaders({
+            'x-access-token': JSON.parse(this.userData).token,
+            'Content-type': 'application/json',
+        })
+    }
+}
 
   LoadAllFAQs() {
     this._http.get<any>(environment.apiPath + 'faqs').subscribe(
@@ -27,14 +41,7 @@ export class FaqsService {
   }
 
   postFAQ(faq) {
-    this._http.post<FAQ>(environment.apiPath + 'faqs', faq).subscribe(
-      (data) => {
-        console.log(data)
-      },
-      (err) => {
-        console.log(err)
-      }
-    )
+    return this._http.post<FAQ>(environment.apiPath + 'faqs', faq, { headers: this.httpOptions })
   }
 
   getAllFAQs() {
@@ -44,6 +51,10 @@ export class FaqsService {
     else {
       this.LoadAllFAQs();
     }
+  }
+
+  deleteFAQ(id) {
+    return this._http.delete<any>(environment.apiPath + 'faqs/' + id, { headers: this.httpOptions })
   }
 
 }

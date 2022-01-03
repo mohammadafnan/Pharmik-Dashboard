@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Checkout } from 'src/app/Models/Checkout/Checkout-Model';
 import { environment } from '../../../environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError, from } from 'rxjs';
 import { catchError, delay } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +12,24 @@ import { catchError, delay } from 'rxjs/operators';
 export class CheckoutService {
 
   allCheckoutsData: Checkout[];
+  httpOptions: any;
+    userData!:any;
 
-  constructor(public _http: HttpClient) { }
+    constructor(public _http: HttpClient, public router: Router) {
+      this.userData = localStorage.getItem('tokenInfo')
+      if (this.userData == null || this.userData == undefined) {
+          this.router.navigate(["/"])
+      }
+      else {
+          this.httpOptions = new HttpHeaders({
+              'x-access-token': JSON.parse(this.userData).token,
+              'Content-type': 'application/json',
+          })
+      }
+  }
 
   LoadAllCheckouts() {
-    this._http.get<any>(environment.apiPath + 'checkouts').subscribe(
+    this._http.get<any>(environment.apiPath + 'checkouts',{headers:this.httpOptions}).subscribe(
       (data) => {
         this.allCheckoutsData = data
       },
@@ -36,7 +50,7 @@ export class CheckoutService {
   }
 
   updateOrderStatus(obj) {
-    return this._http.put<any>(environment.apiPath + 'checkouts', obj)
+    return this._http.put<any>(environment.apiPath + 'checkouts', obj,{headers:this.httpOptions})
   }
 
 }

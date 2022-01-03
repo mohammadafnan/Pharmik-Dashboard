@@ -4,6 +4,8 @@ import { Editor } from 'ngx-editor';
 import { Category } from '../Models/Category/Category-Model';
 import { CategoryService } from '../Services/Category/category.service';
 import { FormBuilder, FormControl, FormGroupDirective, NgForm, Validators, FormGroup } from '@angular/forms';
+import { GlobalService } from '../Services/Global/global.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categories',
@@ -28,10 +30,13 @@ export class CategoriesComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
     private fb: FormBuilder,
-    public _CategoryService: CategoryService
+    public _CategoryService: CategoryService,
+    public globalService: GlobalService,
+    public router:Router
   ) { }
 
   ngOnInit(): void {
+    this.globalService.checkIsUserAuthenticated();
     this.editor = new Editor();
 
     this.categoryObject = {
@@ -49,7 +54,9 @@ export class CategoriesComponent implements OnInit {
   }
   // make sure to destory the editor
   ngOnDestroy(): void {
-    this.editor.destroy();
+    if (this.editor != null || this.editor != undefined) {
+      this.editor.destroy();
+    }
   }
 
   loadImage(event: Event) {
@@ -96,6 +103,31 @@ export class CategoriesComponent implements OnInit {
 
     console.log("Category Object : ", this.categoryObject)
 
-    this._CategoryService.postCategory(this.categoryObject)
+    this._CategoryService.postCategory(this.categoryObject).subscribe(
+      (data) => {
+        console.log(data)
+        this.globalService.openPopup(
+          "Success",
+          "Category Created Successfully"
+        )
+      },
+      (err) => {
+        console.log(err)
+        if(err.status == 401){
+          this.globalService.openPopup(
+            "Error",
+            "Token Expire ! Please Login Again"
+          )
+        }
+        else{
+          this.globalService.openPopup(
+            "Error",
+            "Category Creation Failed , " + err.statusText
+          )
+        }
+      },()=>{
+        this._CategoryService.LoadAllCategory();
+      }
+    )
   }
 }

@@ -1,7 +1,7 @@
 <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
   <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
     <h1 class="navbar-brand brand-logo text-info"> <i class="mdi mdi-leaf mr-1 text-info"></i>
-      Pharmik</h1>
+      Plus UK Meds</h1>
     <!-- <a class="navbar-brand brand-logo" routerLink="/"><img src="assets/images/logo.svg" alt="logo" /></a>
     <a class="navbar-brand brand-logo-mini" routerLink="/"><img src="assets/images/logo-mini.svg" alt="logo" /></a> -->
   </div>
@@ -31,7 +31,7 @@
             <!-- <span class="availability-status online"></span> -->
           </div>
           <div class="nav-profile-text">
-            <p class="mb-1 text-black">David Greymaax</p>
+            <p class="mb-1 text-black">Admin</p>
           </div>
         </a>
         <div class="dropdown-menu navbar-dropdown" ngbDropdownMenu aria-labelledby="profileDropdown">
@@ -40,7 +40,7 @@
             Activity Log
           </a> -->
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="javascript:;">
+          <a class="dropdown-item" (click)="logout()">
             <i class="mdi mdi-logout mr-2 text-primary"></i>
             Signout
           </a>

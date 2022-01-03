@@ -3,6 +3,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Editor, Toolbar, toDoc } from 'ngx-editor';
 import { FormBuilder, FormControl, FormGroupDirective, NgForm, Validators, FormGroup } from '@angular/forms';
 import { BlogService } from '../Services/Blog/blog.service';
+import { GlobalService } from '../Services/Global/global.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
@@ -44,10 +46,13 @@ export class BlogComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
     public fb: FormBuilder,
-    public _BlogService: BlogService
+    public _BlogService: BlogService,
+    public globalService: GlobalService,
+    public router: Router
   ) { }
 
   ngOnInit(): void {
+    this.globalService.checkIsUserAuthenticated();
     this.editor = new Editor();
     this._BlogService.getAllBlogs();
     setTimeout(() => {
@@ -71,7 +76,9 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    this.editor.destroy();
+    if (this.editor != null || this.editor != undefined) {
+      this.editor.destroy();
+    }
   }
 
   openModal(exampleModalContent) {
@@ -107,7 +114,32 @@ export class BlogComponent implements OnInit {
     console.log("HTML Content : ", this.htmlContent)
     console.log("Blog Object : ", this.blogObject)
 
-    this._BlogService.postBlogs(this.blogObject)
+    this._BlogService.postBlogs(this.blogObject).subscribe(
+      (data) => {
+        this.globalService.openPopup(
+          "Success",
+          "Blog Posted Successfully !"
+        )
+      },
+      (err) => {
+        console.log(err)
+        if (err.status == 401) {
+          this.globalService.openPopup(
+            "Error",
+            "Token Expire ! Please Login Again"
+          )
+        }
+        else {
+          this.globalService.openPopup(
+            "Error",
+            "Cannot Add Blog , " + err.statusText
+          )
+        }
+      }, () => {
+        console.log("Blog Added Successfully")
+        this._BlogService.LoadAllBlogs();
+      }
+    )
   }
 
   setKeywordsInBlogData() {
@@ -129,9 +161,26 @@ export class BlogComponent implements OnInit {
     this._BlogService.deleteBlog(blogObject.id).subscribe(
       data => {
         console.log("Blog Deleted Successfully")
+        this.globalService.openPopup(
+          "Success",
+          "Blog Deleted Successfully !"
+        )
       }, err => {
         console.log(err)
+        if (err.status == 401) {
+          this.globalService.openPopup(
+            "Error",
+            "Token Expire ! Please Login Again"
+          )
+        }
+        else {
+          this.globalService.openPopup(
+            "Success",
+            "Blog Deletion Failed , " + err.statusText
+          )
+        }
       }, () => {
+        this._BlogService.LoadAllBlogs();
       }
     )
   }
