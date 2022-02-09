@@ -53,6 +53,7 @@ import { OrdermanagmentComponent } from './ordermanagment/ordermanagment.compone
     ReactiveFormsModule,
     ChartsModule,
     NgxEditorModule,
+    
   ],
   providers: [ThemeService],
   bootstrap: [AppComponent]
